@@ -13,6 +13,7 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
+            font-family: 'Beaufort', sans-serif;
             background: url('{{ asset('Img/login.jpg') }}') center/cover no-repeat;
         }
 
@@ -22,9 +23,15 @@
             left: 50%;
             transform: translate(-50%, -50%);
             background: rgba(255, 255, 255);
-            padding: 200px 150px;
-            border-radius: 10px;
+            padding: 150px 60px;
             text-align: center;
+        }
+
+        h3 {
+
+            font-family: 'Spiegel', serif;
+            font-size: 35px;
+
         }
 
         .cajaLogin h2{
@@ -52,22 +59,34 @@
             border-radius: 5px;
         }
 
-        .redesSociales{
-            display: flex;
-            justify-content: space-around;
-            margin-top: 10px;
-        }
-
-        .redesSocialesbutton {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            font-size: 18px;
-        }
-
         .posicion{
 
-            margin-top: -40%;
+            margin-top: -30%;
+            margin-left: -6%;
+
+        }
+
+        .posicion h3{
+
+            margin-left: 5%;
+
+        }
+
+        .enviar{
+
+            width: 110%;
+
+        }
+
+        .noTienesCuenta, .crearCuenta {
+
+            margin-left: 5%;
+
+        }
+
+        .crearCuenta{
+
+            text-decoration: none;
 
         }
 
@@ -79,21 +98,18 @@
     </div>
     <div class="cajaLogin">
         <div class="posicion">
-        <h2>Iniciar sesión</h2>
+        <h3>Iniciar sesión</h3>
         <form method="POST">
             @csrf
             <input type="text" name="username" placeholder="Nombre de usuario" required>
             <input type="password" name="password" placeholder="Contraseña" required>
-            <button type="submit"></button>
+            <br>
+            <br>
+            <button type="submit" class="enviar">Enviar</button>
         </form>
-        <div class="social-login">
-            <button class="google">G</button>
-            <button class="facebook">f</button>
-            <button class="xbox">X</button>
-            <button class="playstation">P</button>
-        </div>
-        <a href="#">¿No puedes iniciar sesión?</a>
-        <a href="#">Crear cuenta</a>
+            <br>
+            <h4 class="noTienesCuenta">¿No tienes cuenta?</h4>
+        <a href="registro" class="crearCuenta">Crear cuenta</a>
     </div>
     </div>
 </body>
