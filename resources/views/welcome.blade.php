@@ -171,7 +171,6 @@
     <a href="#" class="login">INICIA SESIÓN</a>
 </div>
 
-<!-- imagenFondo SECTION -->
 <div class="imagenFondo">
     <div class="imagenFondo-overlay"></div>
     <div class="categorias">ESPORTS</div>
