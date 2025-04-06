@@ -71,11 +71,19 @@
             cursor: pointer;
             width: 100%;
             border-radius: 5px;
+            transition: 0.8s;
         }
 
         .enviar{
 
             width: 58%;
+
+        }
+
+        button:hover{
+
+            background-color: #ca3d4c;
+            transform: scale(1.05);
 
         }
 
@@ -107,7 +115,7 @@
 <div class="background">
 </div>
 <div class="titulo">
-<h1>CREAR CUENTA</h1>
+<h1>CREA TU CUENTA</h1>
 </div>
 
 <div class="cajaLogin">

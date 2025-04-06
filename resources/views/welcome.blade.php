@@ -111,6 +111,8 @@
 
         .section {
             background-color: #222;
+            width: 50%;
+            margin: 0 auto  ;
             padding: 20px;
             margin-top: 2%;
             border-radius: 10px;
@@ -133,8 +135,28 @@
         }
 
         .card img {
-            width: 100%;
+            width: 95%;
+            margin-top: 2%;
             border-radius: 10px;
+        }
+
+        .card h3{
+
+            margin-top: 2%;
+            font-size: 30px;
+
+        }
+
+        img{
+
+            transition: 1s;
+
+        }
+
+        img:hover{
+
+           transform: scale(1.05);
+
         }
 
         .footer {
@@ -168,7 +190,7 @@
         <a href="#">RECOMPENSAS</a>
         <a href="#">MÁS ▼</a>
     </div>
-    <a href="#" class="login">INICIA SESIÓN</a>
+    <a href="login" class="login">INICIA SESIÓN</a>
 </div>
 
 <div class="imagenFondo">
@@ -183,11 +205,11 @@
 
 <div class="grid">
     <div class="card">
-        <img src="{{ asset('Img/valorantChampions.jpg') }}" alt="Valorant">
+        <a href="enfrentamientos"><img src="{{ asset('Img/valorantChampions.jpg') }}" alt="Valorant"></a>
         <h3>Valorant</h3>
     </div>
     <div class="card">
-        <img src="{{ asset('Img/LOLEASPORTS.jpg') }}" alt="League of Legends">
+        <a href="enfrentamientos"><img src="{{ asset('Img/LOLEASPORTS.jpg') }}" alt="League of Legends"></a>
         <h3>League of Legends</h3>
     </div>
 </div>
@@ -195,7 +217,7 @@
 <div class="section">Crea tu propio equipo con gente</div>
 
 <div class="grid">
-    <img src="{{ asset('Img/LOLEASPORTS.jpg') }} alt="Equipo" style="width: 80%; border-radius: 10px;">
+    <img src="{{ asset('Img/CreaTuPropioEquipoLol.jpg') }}" alt="Equipo" style="width: 40%; border-radius: 15px; border: 3px solid #333">
 </div>
 
 <div class="footer">&copy; 2024 Esports. Todos los derechos reservados.</div>
