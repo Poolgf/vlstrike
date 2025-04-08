@@ -138,7 +138,6 @@
 
 <div class="imagenFondo">
     <div class="imagenFondo-overlay"></div>
-    <div class="categorias">ESPORTS</div>
     <div class="imagenFondoContenido">
         <h1>Campeones del Mundo<br> LoL 2011-2024: Todos los<br> ganadores y equipos</h1>
     </div>
@@ -160,7 +159,7 @@
 <div class="section">Crea tu propio equipo con gente</div>
 
 <div class="grid">
-    <img src="{{ asset('Img/CreaTuPropioEquipoLol.jpg') }}" alt="Equipo" style="width: 40%; border-radius: 15px; border: 3px solid #333">
+    <a href="/rangosLOL"><img src="{{ asset('Img/CreaTuPropioEquipoLol.jpg') }}" alt="Equipo" style="width: 40%; border-radius: 15px; border: 3px solid #333"></a>
 </div>
 
 <div class="footer">&copy; 2024 Esports. Todos los derechos reservados.</div>
