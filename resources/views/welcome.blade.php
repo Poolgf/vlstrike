@@ -16,51 +16,6 @@
             color: white;
         }
 
-        .navbar {
-            position: fixed;
-            width: 100%;
-            top: 0;
-            left: 0;
-            background-color: rgba(0, 0, 0, 0.9);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 15px 40px;
-            z-index: 1000;
-            transition: 0.8s;
-        }
-
-        .navbar div a:hover{
-            transform: scale(1.05);
-            color: #dfdfdf;
-        }
-
-        .navbar .logo {
-            font-size: 22px;
-            font-weight: bold;
-            color: red;
-        }
-
-        .navbar .menu {
-            display: flex;
-            gap: 20px;
-        }
-
-        .navbar a {
-            text-decoration: none;
-            color: white;
-            font-weight: bold;
-            font-size: 14px;
-        }
-
-        .navbar .login {
-            background-color: #0094FF;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 14px;
-            margin-right: 3%;
-        }
-
         .imagenFondo {
             position: relative;
             height: 100%;
@@ -178,20 +133,8 @@
     </style>
 </head>
 <body>
-<!-- NAVBAR -->
-<div class="navbar">
-    <div class="logo">RedBull</div>
-    <div class="menu">
-        <a href="#">INICIO</a>
-        <a href="#">EVENTOS Y CLASIFICACIÓN</a>
-        <a href="#">OTRAS LIGAS</a>
-        <a href="#">POWER RANKINGS</a>
-        <a href="#">QUINIELA DEL MUNDIAL</a>
-        <a href="#">RECOMPENSAS</a>
-        <a href="#">MÁS ▼</a>
-    </div>
-    <a href="login" class="login">INICIA SESIÓN</a>
-</div>
+
+<x-header/>
 
 <div class="imagenFondo">
     <div class="imagenFondo-overlay"></div>

@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ranks - League of Legends</title>
+    <title>Ranks - Valorant</title>
     <style>
-
         * {
             margin: 0;
             padding: 0;
@@ -15,51 +14,6 @@
             font-family: Arial, sans-serif;
             background-color: #121212;
             color: white;
-        }
-
-        .navbar {
-            position: fixed;
-            width: 100%;
-            top: 0;
-            left: 0;
-            background-color: rgba(0, 0, 0, 0.9);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 15px 40px;
-            z-index: 1000;
-            transition: 0.8s;
-        }
-
-        .navbar div a:hover{
-            transform: scale(1.05);
-            color: #dfdfdf;
-        }
-
-        .navbar .logo {
-            font-size: 22px;
-            font-weight: bold;
-            color: red;
-        }
-
-        .navbar .menu {
-            display: flex;
-            gap: 20px;
-        }
-
-        .navbar a {
-            text-decoration: none;
-            color: white;
-            font-weight: bold;
-            font-size: 14px;
-        }
-
-        .navbar .login {
-            background-color: #0094FF;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 14px;
-            margin-right: 3%;
         }
 
         .container {
@@ -78,11 +32,40 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .rangosFondo:hover {
+            background-color: #2a2a2a;
+            transform: scale(1.05);
         }
 
         .rangosFondo img {
             width: 100%;
+            transition: 0.8s;
             max-width: 200px;
+        }
+
+        .rangosFondo img:hover {
+
+            transform: scale(1.15);
+        }
+
+        .radiant {
+            grid-column: span 2;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .radiant {
+                grid-column: span 1;
+            }
         }
 
         .footer {
@@ -92,29 +75,11 @@
             font-size: 12px;
             margin-top: 40px;
         }
-
-        @media (max-width: 768px) {
-            .container {
-                grid-template-columns: repeat(1, 1fr);
-            }
-        }
     </style>
 </head>
 <body>
 
-<div class="navbar">
-    <div class="logo">RedBull</div>
-    <div class="menu">
-        <a href="#">INICIO</a>
-        <a href="#">EVENTOS Y CLASIFICACIÓN</a>
-        <a href="#">OTRAS LIGAS</a>
-        <a href="#">POWER RANKINGS</a>
-        <a href="#">QUINIELA DEL MUNDIAL</a>
-        <a href="#">RECOMPENSAS</a>
-        <a href="#">MÁS ▼</a>
-    </div>
-    <a href="#" class="login">INICIA SESIÓN</a>
-</div>
+<x-header/>
 
 <div class="container">
     <div class="rangosFondo"><img src="{{ asset('Img/Valorant/Rangos/Iron.png') }}" alt="Iron"></div>
@@ -125,11 +90,15 @@
     <div class="rangosFondo"><img src="{{ asset('Img/Valorant/Rangos/Ascendant.png') }}" alt="Ascendant"></div>
     <div class="rangosFondo"><img src="{{ asset('Img/Valorant/Rangos/Diamond.png') }}" alt="Diamond"></div>
     <div class="rangosFondo"><img src="{{ asset('Img/Valorant/Rangos/Immortal.png') }}" alt="Immortal"></div>
-    <div class="rangosFondo"><img src="{{ asset('Img/Valorant/Rangos/Radiant.png') }}" alt="Radiant"></div>
+
+    <!-- Radiant centrado abajo -->
+    <div class="rangosFondo radiant">
+        <img src="{{ asset('Img/Valorant/Rangos/Radiant.png') }}" alt="Radiant">
+    </div>
 </div>
 
 <div class="footer">
-    &copy; 2024 Riot Games - League of Legends. Todos los derechos reservados.
+    &copy; 2024 Riot Games - Valorant. Todos los derechos reservados.
 </div>
 
 </body>

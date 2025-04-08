@@ -16,51 +16,6 @@
             color: white;
         }
 
-        .navbar {
-            position: fixed;
-            width: 100%;
-            top: 0;
-            left: 0;
-            background-color: rgba(0, 0, 0, 0.9);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 15px 40px;
-            z-index: 1000;
-            transition: 0.8s;
-        }
-
-        .navbar div a:hover{
-            transform: scale(1.05);
-            color: #dfdfdf;
-        }
-
-        .navbar .logo {
-            font-size: 22px;
-            font-weight: bold;
-            color: red;
-        }
-
-        .navbar .menu {
-            display: flex;
-            gap: 20px;
-        }
-
-        .navbar a {
-            text-decoration: none;
-            color: white;
-            font-weight: bold;
-            font-size: 14px;
-        }
-
-        .navbar .login {
-            background-color: #0094FF;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 14px;
-            margin-right: 3%;
-        }
-
         .container {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -77,11 +32,30 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .rangosFondo:hover {
+            background-color: #2a2a2a;
+            transform: scale(1.05);
         }
 
         .rangosFondo img {
             width: 100%;
+            transition: 0.8s;
             max-width: 200px;
+        }
+
+        .rangosFondo img:hover {
+
+            transform: scale(1.2);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
         }
 
         .footer {
@@ -91,29 +65,11 @@
             font-size: 12px;
             margin-top: 40px;
         }
-
-        @media (max-width: 768px) {
-            .container {
-                grid-template-columns: repeat(1, 1fr);
-            }
-        }
     </style>
 </head>
 <body>
 
-<div class="navbar">
-    <div class="logo">RedBull</div>
-    <div class="menu">
-        <a href="#">INICIO</a>
-        <a href="#">EVENTOS Y CLASIFICACIÓN</a>
-        <a href="#">OTRAS LIGAS</a>
-        <a href="#">POWER RANKINGS</a>
-        <a href="#">QUINIELA DEL MUNDIAL</a>
-        <a href="#">RECOMPENSAS</a>
-        <a href="#">MÁS ▼</a>
-    </div>
-    <a href="#" class="login">INICIA SESIÓN</a>
-</div>
+<x-header/>
 
 <div class="container">
     <div class="rangosFondo"><img src="{{ asset('Img/LOL/Rangos/Iron.png') }}" alt="Iron"></div>
