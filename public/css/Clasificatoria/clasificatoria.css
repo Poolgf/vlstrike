@@ -1,0 +1,391 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Rajdhani', sans-serif;
+    background: radial-gradient(circle at center, #0a0a0a 0%, #000 100%);
+    color: #fff;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    position: relative;
+}
+
+.title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(45deg, #fff, #888);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.title::before {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #fff, transparent);
+    animation: slideLight 2s infinite;
+}
+
+@keyframes slideLight {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.ranking-container {
+    display: grid;
+    gap: 20px;
+    perspective: 2000px;
+}
+
+.rank-card {
+    display: grid;
+    grid-template-columns: 100px 1fr 150px 1fr 150px 60px;
+    align-items: center;
+    padding: 25px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    opacity: 0;
+    transform: translateY(50px) rotateX(-10deg);
+    animation: cardAppear 0.6s ease forwards;
+    animation-delay: calc(var(--i) * 0.1s);
+    position: relative;
+    overflow: hidden;
+}
+
+.rank-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: all 0.5s ease;
+}
+
+.rank-card:hover::before {
+    left: 100%;
+}
+
+@keyframes cardAppear {
+    to {
+        opacity: 1;
+        transform: translateY(0) rotateX(0);
+    }
+}
+
+.rank-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.rank-position {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    font-weight: 900;
+    position: relative;
+    background: linear-gradient(45deg, #111, #222);
+    border-radius: 15px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.rank-position.gold {
+    background: linear-gradient(45deg, #FFD700, #FFA500);
+    color: #000;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+}
+
+.rank-position.silver {
+    background: linear-gradient(45deg, #C0C0C0, #808080);
+    color: #000;
+    box-shadow: 0 0 20px rgba(192, 192, 192, 0.5);
+}
+
+.rank-position.bronze {
+    background: linear-gradient(45deg, #CD7F32, #8B4513);
+    color: #fff;
+    box-shadow: 0 0 20px rgba(205, 127, 50, 0.5);
+}
+
+.team-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.team-logo {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.team-logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.2));
+    transition: all 0.3s ease;
+}
+
+.rank-card:hover .team-logo-img {
+    transform: scale(1.1) rotate(5deg);
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
+}
+
+.team-name {
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.team-points-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 0 20px;
+}
+
+.team-points {
+    font-size: 3.5rem;
+    font-weight: 900;
+    background: linear-gradient(45deg, #fff, #999);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.rank-card:hover .team-points {
+    transform: scale(1.1);
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
+}
+
+.points-label {
+    font-size: 0.9rem;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.team-stats {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+}
+
+.team-record {
+    font-size: 1.2rem;
+    margin-right: 10%;
+    color: #aaa;
+    font-weight: 600;
+}
+
+.win-rate-bar {
+    width: 150px;
+    height: 30px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+}
+
+.win-rate-fill {
+    height: 100%;
+    background: linear-gradient(45deg, #00ff87, #60efff);
+    border-radius: 15px;
+    position: relative;
+    transition: width 1s ease;
+}
+
+.win-rate-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: #fff;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.admin-edit-btn {
+    width: 46px;
+    height: 46px;
+    border-radius: 10px;
+    background: linear-gradient(45deg, #ff5e00, #ff2d95);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 1;
+    transform: scale(0.8);
+    box-shadow: 0 5px 15px rgba(255, 45, 149, 0.3);
+    margin-top: 20%;
+}
+
+.admin-edit-icon {
+    color: white;
+    font-size: 24px;
+}
+
+.admin-user .admin-edit-btn {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.admin-edit-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(255, 45, 149, 0.5);
+}
+
+.background-effects {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.grid-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: gridMove 20s linear infinite;
+}
+
+@keyframes gridMove {
+    0% { transform: perspective(1000px) rotateX(60deg) translateY(0); }
+    100% { transform: perspective(1000px) rotateX(60deg) translateY(50px); }
+}
+
+.floating-particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.particle {
+    position: absolute;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.side-decoration {
+    position: fixed;
+    top: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, #fff, transparent);
+    opacity: 0.1;
+    animation: sideGlow 3s infinite alternate;
+}
+
+.side-decoration.left {
+    left: 20px;
+}
+
+.side-decoration.right {
+    right: 20px;
+}
+
+@keyframes sideGlow {
+    0% { opacity: 0.1; }
+    100% { opacity: 0.3; }
+}
+
+a{
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .rank-card {
+        grid-template-columns: 60px 1fr 60px;
+        grid-template-rows: auto auto auto;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .rank-position {
+        width: 50px;
+        height: 50px;
+        font-size: 1.8rem;
+    }
+
+    .team-info {
+        grid-column: 2;
+    }
+
+    .admin-edit-btn {
+        grid-column: 3;
+        grid-row: 1;
+        width: 40px;
+        height: 40px;
+    }
+
+    .team-points-container {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        padding: 15px 0;
+    }
+
+    .team-stats {
+        grid-column: 1 / -1;
+        grid-row: 3;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .win-rate-bar {
+        width: 120px;
+    }
+}

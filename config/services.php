@@ -35,4 +35,9 @@ return [
         ],
     ],
 
+    'riot' => [
+        'key' => env('RIOT_API_KEY'),
+        'base_url' => 'https://europe.api.riotgames.com',
+    ],
+
 ];
