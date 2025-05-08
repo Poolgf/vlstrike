@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ComentariosControlador;
 use App\Http\Controllers\EnfrentamientosControlador;
 use App\Http\Controllers\EquiposControlador;
 use App\Http\Controllers\LoginControlador;
@@ -28,58 +29,23 @@ Route::get('/registro', function () {
     return view('Registro/registro');
 });
 
+
+
 /*--------------------------------------------------------------------------------------------------------*/
 
 Route::middleware('auth')->group(function () {
 
     /*-------------------------------------------Rangos-----------------------------------------------------*/
 
+    Route::get('/rangosLOL/{rango}', [ComentariosControlador::class, 'mostrarComentarios'])->name('mostrarComentarios');
 
-    Route::get('/rangosLOL/hierro', function () {
-        return view('Chat/hierro');
-    });
-
-    Route::get('/rangosLOL/bronce', function () {
-        return view('Chat/bronce');
-    });
-
-    Route::get('/rangosLOL/plata', function () {
-        return view('Chat/plata');
-    });
-
-    Route::get('/rangosLOL/oro', function () {
-        return view('Chat/oro');
-    });
-
-    Route::get('/rangosLOL/platino', function () {
-        return view('Chat/platino');
-    });
-
-    Route::get('/rangosLOL/esmeralda', function () {
-        return view('Chat/esmeralda');
-    });
-
-    Route::get('/rangosLOL/diamante', function () {
-        return view('Chat/diamante');
-    });
-
-    Route::get('/rangosLOL/maestro', function () {
-        return view('Chat/maestro');
-    });
-
-    Route::get('/rangosLOL/grandMaster', function () {
-        return view('Chat/grandMaster');
-    });
-
-    Route::get('/rangosLOL/challenger', function () {
-        return view('Chat/challenger');
-    });
+    Route::post('/rangosLOL/{rango}', [ComentariosControlador::class, 'introducirComentario'])->name('introducirComentario');
 
     Route::get('/rangosLOL', function () {
         return view('rangosLOL');
     });
 
-
+    /*--------------------------------------------------------------------------------------------------------*/
 
     Route::get('/enfrentamientos', [EnfrentamientosControlador::class, 'mostrarPartidos'])->name('mostrarPartidos');
 
@@ -94,7 +60,12 @@ Route::middleware('auth')->group(function () {
     Route::put('/clasificatoria/{id}', [EquiposControlador::class, 'actualizarEquipo'])->name('actualizarEquipo');
 
     /*--------------------------------------------Riot-API----------------------------------------------------*/
+
     Route::get('/home/perfilUsuario/{id}', [RiotControlador::class, 'conseguirJugador'])->name('jugador');
+
+    /*--------------------------------------------------------------------------------------------------------*/
+
+/*--------------------------------------------------------------------------------------------------------*/
 
 });
 

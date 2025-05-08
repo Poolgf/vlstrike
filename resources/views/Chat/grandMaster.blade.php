@@ -28,7 +28,7 @@
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6),
-            0 0 0 1px rgba(220, 53, 69, 0.1); /* Red Subtle Border */
+            0 0 0 1px rgba(220, 53, 69, 0.1);
             backdrop-filter: blur(20px);
             display: flex;
             flex-direction: column;
@@ -47,12 +47,12 @@
         }
 
         .header-grandmaster-chat {
-            background: rgba(220, 53, 69, 0.2); /* Red Background */
+            background: rgba(220, 53, 69, 0.2);
             padding: 20px;
             display: flex;
             align-items: center;
             gap: 20px;
-            border-bottom: 1px solid rgba(220, 53, 69, 0.2); /* Red Border */
+            border-bottom: 1px solid rgba(220, 53, 69, 0.2);
             position: relative;
             overflow: hidden;
         }
@@ -67,7 +67,7 @@
             background: linear-gradient(
                 90deg,
                 transparent,
-                rgba(168, 20, 32, 0.27), /* Red Shine */
+                rgba(168, 20, 32, 0.27),
                 transparent
             );
             animation: headerShineGrandmaster 3s infinite linear;
@@ -93,7 +93,7 @@
             width: 100%;
             height: 100%;
             object-fit: contain;
-            filter: drop-shadow(0 0 15px rgba(220, 53, 69, 0.4)); /* Red Shadow */
+            filter: drop-shadow(0 0 15px rgba(220, 53, 69, 0.4));
         }
 
         h1 {
@@ -101,7 +101,7 @@
             font-size: 24px;
             text-transform: uppercase;
             letter-spacing: 2px;
-            text-shadow: 0 0 15px rgba(220, 53, 69, 0.3); /* Red Shadow */
+            text-shadow: 0 0 15px rgba(220, 53, 69, 0.3);
         }
 
         .zona-chat-grandmaster {
@@ -125,11 +125,11 @@
         }
 
         .contenedor-mensajes::-webkit-scrollbar-track {
-            background: rgba(220, 53, 69, 0.05); /* Red Scrollbar Track */
+            background: rgba(220, 53, 69, 0.05);
         }
 
         .contenedor-mensajes::-webkit-scrollbar-thumb {
-            background: rgba(220, 53, 69, 0.3); /* Red Scrollbar Thumb */
+            background: rgba(220, 53, 69, 0.3);
             border-radius: 4px;
         }
 
@@ -157,16 +157,16 @@
         }
 
         .mensaje.propio .contenido-mensaje {
-            background: rgba(220, 53, 69, 0.1); /* Red Background for own messages */
-            border: 1px solid rgba(220, 53, 69, 0.2); /* Red Border for own messages */
+            background: rgba(220, 53, 69, 0.1);
+            border: 1px solid rgba(220, 53, 69, 0.2);
         }
 
         .avatar-mensaje {
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #5c1e1e 0%, #84302e 100%); /* Darker Red Gradient Avatar */
-            border: 2px solid rgba(220, 53, 69, 0.4); /* Red avatar border */
+            background: linear-gradient(135deg, #5c1e1e 0%, #84302e 100%);
+            border: 2px solid rgba(220, 53, 69, 0.4);
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
@@ -174,7 +174,7 @@
 
         .avatar-mensaje:hover {
             transform: scale(1.1);
-            box-shadow: 0 0 20px rgba(220, 53, 69, 0.3); /* Red avatar shadow */
+            box-shadow: 0 0 20px rgba(220, 53, 69, 0.3);
         }
 
         .avatar-mensaje::after {
@@ -184,7 +184,7 @@
             left: 50%;
             width: 70%;
             height: 70%;
-            background: rgba(220, 53, 69, 0.1); /* Red inner circle */
+            background: rgba(220, 53, 69, 0.1);
             border-radius: 50%;
             transform: translate(-50%, -50%);
         }
@@ -194,7 +194,7 @@
             padding: 15px;
             border-radius: 15px;
             max-width: 70%;
-            border: 1px solid rgba(220, 53, 69, 0.1); /* Red message border */
+            border: 1px solid rgba(220, 53, 69, 0.1);
             transition: all 0.3s ease;
         }
 
@@ -208,7 +208,7 @@
             display: flex;
             justify-content: space-between;
             margin-bottom: 8px;
-            color: rgba(220, 53, 69, 0.6); /* Red text */
+            color: rgba(220, 53, 69, 0.6);
             font-size: 14px;
         }
 
@@ -229,14 +229,14 @@
             display: flex;
             gap: 15px;
             align-items: center;
-            border-top: 1px solid rgba(220, 53, 69, 0.1); /* Red form border */
+            border-top: 1px solid rgba(220, 53, 69, 0.1);
         }
 
         .entrada-mensaje-grandmaster {
             flex: 1;
             padding: 15px 20px;
             background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(220, 53, 69, 0.1); /* Red input border */
+            border: 1px solid rgba(220, 53, 69, 0.1);
             border-radius: 10px;
             color: #fff;
             font-size: 16px;
@@ -246,8 +246,8 @@
         .entrada-mensaje-grandmaster:focus {
             outline: none;
             background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(220, 53, 69, 0.5); /* Red focus border */
-            box-shadow: 0 0 20px rgba(220, 53, 69, 0.1); /* Red focus shadow */
+            border-color: rgba(220, 53, 69, 0.5);
+            box-shadow: 0 0 20px rgba(220, 53, 69, 0.1);
         }
 
         .entrada-mensaje-grandmaster::placeholder {
@@ -256,7 +256,7 @@
 
         .boton-enviar-grandmaster {
             padding: 15px 30px;
-            background: linear-gradient(135deg, #84302e 0%, #5c1e1e 100%); /* Darker Red Gradient Button */
+            background: linear-gradient(135deg, #84302e 0%, #5c1e1e 100%);
             border: none;
             border-radius: 10px;
             color: #fff;
@@ -271,7 +271,7 @@
 
         .boton-enviar-grandmaster:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(220, 53, 69, 0.3); /* Red button shadow */
+            box-shadow: 0 5px 15px rgba(220, 53, 69, 0.3);
         }
 
         .boton-enviar-grandmaster:active {
@@ -308,7 +308,7 @@
         .typing-dot {
             width: 8px;
             height: 8px;
-            background: rgba(220, 53, 69, 0.5); /* Red typing dot */
+            background: rgba(220, 53, 69, 0.5);
             border-radius: 50%;
             animation: typingAnimation 1s infinite;
         }
@@ -331,7 +331,7 @@
         }
 
         @keyframes newMessagePulse {
-            0% { transform: scale(1.1); background: rgba(220, 53, 69, 0.1); /* Red pulse background */ }
+            0% { transform: scale(1.1); background: rgba(220, 53, 69, 0.1);}
             100% { transform: scale(1); background: rgba(255, 255, 255, 0.05); }
         }
 
@@ -356,95 +356,48 @@
 
     <div class="zona-chat-grandmaster">
         <div class="contenedor-mensajes">
-            <div class="mensaje">
-                <div class="avatar-mensaje avatar-grandmaster"></div>
-                <div class="contenido-mensaje">
-                    <div class="encabezado-mensaje">
-                        <span class="usuario-mensaje">GrandmasterPlayer1</span>
-                        <span class="hora-mensaje">21:30</span>
+            @foreach($comentarios as $comentario)
+                <div class="mensaje {{ $comentario->usuario_id === Auth::id() ? 'propio' : '' }}">
+                    <div class="avatar-mensaje">
+                        @if($comentario->usuario)
+                            <a href="{{ route('jugador', $comentario->usuario_id) }}" class="avatar-link">
+                                @if($comentario->usuario->icono)
+                                    <img src="{{ asset($comentario->usuario->icono) }}" alt="Avatar de {{ $comentario->usuario->nombre }}" class="avatar-img">
+                                @else
+                                    <div class="avatar-fallback avatar-{{ $rango }}"></div>
+                                @endif
+                            </a>
+                        @else
+                            <div class="avatar-fallback avatar-{{ $rango }}"></div>
+                        @endif
                     </div>
-                    <div class="texto-mensaje">
-                        ¿Alguien listo para rankeds? Necesito un buen equipo para subir a Challenger.
-                    </div>
-                </div>
-            </div>
-
-            <div class="mensaje propio">
-                <div class="avatar-mensaje avatar-grandmaster"></div>
-                <div class="contenido-mensaje">
-                    <div class="encabezado-mensaje">
-                        <span class="usuario-mensaje">Tú</span>
-                        <span class="hora-mensaje">21:32</span>
-                    </div>
-                    <div class="texto-mensaje">
-                        ¡Estoy disponible! ¿Qué posiciones necesitas?
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <form class="formulario-mensaje">
-            <input type="text" name="mensaje" placeholder="Escribe un mensaje..." required class="entrada-mensaje-grandmaster">
-            <button type="submit" class="boton-enviar-grandmaster">
-                <span>Enviar</span>
-            </button>
-        </form>
-    </div>
-</div>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const messagesContainer = document.querySelector('.contenedor-mensajes');
-        messagesContainer.scrollTop = messagesContainer.scrollHeight;
-    });
-
-    document.querySelector('.formulario-mensaje').addEventListener('submit', function (e) {
-        e.preventDefault();
-
-        const input = document.querySelector('.entrada-mensaje-grandmaster');
-        const message = input.value.trim();
-
-        if (message) {
-            const messagesContainer = document.querySelector('.contenedor-mensajes');
-
-            const typingIndicator = document.createElement('div');
-            typingIndicator.className = 'typing-indicator';
-            typingIndicator.innerHTML = `
-                <div class="typing-dot"></div>
-                <div class="typing-dot"></div>
-                <div class="typing-dot"></div>
-            `;
-            messagesContainer.appendChild(typingIndicator);
-            messagesContainer.scrollTop = messagesContainer.scrollHeight;
-
-            setTimeout(() => {
-                typingIndicator.remove();
-
-                const newMessage = document.createElement('div');
-                newMessage.className = 'mensaje propio new-message';
-                newMessage.innerHTML = `
-                    <div class="avatar-mensaje avatar-grandmaster"></div>
                     <div class="contenido-mensaje">
                         <div class="encabezado-mensaje">
-                            <span class="usuario-mensaje">Tú</span>
-                            <span class="hora-mensaje">${new Date().getHours()}:${String(new Date().getMinutes()).padStart(2, '0')}</span>
+                <span class="usuario-mensaje">
+                    {{ $comentario->usuario->nombre ?? 'Anónimo' }}
+                </span>
+                            <span class="hora-mensaje">
+                    {{ $comentario->created_at->format('H:i') }}
+                </span>
                         </div>
                         <div class="texto-mensaje">
-                            ${message}
+                            {{ $comentario->comentario }}
                         </div>
                     </div>
-                `;
+                </div>
+            @endforeach
+        </div>
 
-                messagesContainer.appendChild(newMessage);
-                input.value = '';
-                messagesContainer.scrollTop = messagesContainer.scrollHeight;
-
-                setTimeout(() => {
-                    newMessage.classList.remove('new-message');
-                }, 500);
-            }, 1000);
-        }
-    });
-</script>
+        @if(Auth::user()->rango === 'grandmaster')
+            <form class="formulario-mensaje" action="{{ route('introducirComentario', ['rango' => 'grandmaster']) }}" method="POST">
+                @csrf
+                <input type="text" name="comentario" placeholder="Escribe un mensaje..." required class="entrada-mensaje-grandmaster">
+                <button type="submit" class="boton-enviar-grandmaster">
+                    <span>Enviar</span>
+                </button>
+            </form>
+        @endif
+    </div>
+</div>
 </body>
 </html>

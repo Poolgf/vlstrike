@@ -56,6 +56,7 @@ class RegistroControlador extends Controller
         $usuario->puuid = $puuid;
         $usuario->correo = $request->correo;
         $usuario->rol = "cliente";
+        $usuario->rango = "noRango";
         $usuario->contrasena = Hash::make($request->contrasena);
         $usuario->nombre = $request->nombre;
         $usuario->tag = $request->tag;
@@ -63,7 +64,7 @@ class RegistroControlador extends Controller
 
         $usuario->save();
 
-        return redirect()->route('login')   ->with('success', 'Usuario registrado correctamente.');
+        return redirect()->route('login')->with('success', 'Usuario registrado correctamente.');
 
     }
 }

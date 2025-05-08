@@ -165,26 +165,44 @@
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #121212 0%, #000000 100%);
-            border: 2px solid rgba(196, 164, 78, 0.6); /* Dorado avatar border */
+            background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+            border: 2px solid rgba(200, 200, 200, 0.4);
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .avatar-mensaje:hover {
             transform: scale(1.1);
-            box-shadow: 0 0 20px rgba(80, 190, 255, 0.4); /* Azul brillante avatar shadow */
+            box-shadow: 0 0 20px rgba(200, 200, 200, 0.5);
         }
 
-        .avatar-mensaje::after {
+        .avatar-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+
+        .avatar-fallback {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+            position: relative;
+        }
+
+        .avatar-fallback::after {
             content: '';
             position: absolute;
             top: 50%;
             left: 50%;
             width: 70%;
             height: 70%;
-            background: rgba(196, 164, 78, 0.1); /* Dorado inner circle */
+            background: rgba(255, 255, 255, 0.3);
             border-radius: 50%;
             transform: translate(-50%, -50%);
         }
@@ -357,39 +375,47 @@
 
     <div class="zona-chat-challenger">
         <div class="contenedor-mensajes">
-            <div class="mensaje">
-                <div class="avatar-mensaje avatar-challenger"></div>
-                <div class="contenido-mensaje">
-                    <div class="encabezado-mensaje">
-                        <span class="usuario-mensaje">ChallengerPlayer1</span>
-                        <span class="hora-mensaje">21:30</span>
+            @foreach($comentarios as $comentario)
+                <div class="mensaje {{ $comentario->usuario_id === Auth::id() ? 'propio' : '' }}">
+                    <div class="avatar-mensaje">
+                        @if($comentario->usuario)
+                            <a href="{{ route('jugador', $comentario->usuario_id) }}" class="avatar-link">
+                                @if($comentario->usuario->icono)
+                                    <img src="{{ asset($comentario->usuario->icono) }}" alt="Avatar de {{ $comentario->usuario->nombre }}" class="avatar-img">
+                                @else
+                                    <div class="avatar-fallback avatar-{{ $rango }}"></div>
+                                @endif
+                            </a>
+                        @else
+                            <div class="avatar-fallback avatar-{{ $rango }}"></div>
+                        @endif
                     </div>
-                    <div class="texto-mensaje">
-                        ¿Alguien disponible para torneos? Necesito un equipo experimentado para competir a nivel profesional.
+                    <div class="contenido-mensaje">
+                        <div class="encabezado-mensaje">
+                <span class="usuario-mensaje">
+                    {{ $comentario->usuario->nombre ?? 'Anónimo' }}
+                </span>
+                            <span class="hora-mensaje">
+                    {{ $comentario->created_at->format('H:i') }}
+                </span>
+                        </div>
+                        <div class="texto-mensaje">
+                            {{ $comentario->comentario }}
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="mensaje propio">
-                <div class="avatar-mensaje avatar-challenger"></div>
-                <div class="contenido-mensaje">
-                    <div class="encabezado-mensaje">
-                        <span class="usuario-mensaje">Tú</span>
-                        <span class="hora-mensaje">21:32</span>
-                    </div>
-                    <div class="texto-mensaje">
-                        ¡Cuenten conmigo! Tengo experiencia en competitivo como mid y jungle.
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
 
-        <form class="formulario-mensaje">
-            <input type="text" name="mensaje" placeholder="Escribe un mensaje..." required class="entrada-mensaje-challenger">
+        @if(Auth::user()->rango === 'challenger')
+        <form class="formulario-mensaje" action="{{ route('introducirComentario', ['rango' => 'challenger']) }}" method="POST">
+            @csrf
+            <input type="text" name="comentario" placeholder="Escribe un mensaje..." required class="entrada-mensaje-challenger">
             <button type="submit" class="boton-enviar-challenger">
                 <span>Enviar</span>
             </button>
         </form>
+        @endif
     </div>
 </div>
 
@@ -397,54 +423,6 @@
     document.addEventListener('DOMContentLoaded', function () {
         const messagesContainer = document.querySelector('.contenedor-mensajes');
         messagesContainer.scrollTop = messagesContainer.scrollHeight;
-    });
-
-    document.querySelector('.formulario-mensaje').addEventListener('submit', function (e) {
-        e.preventDefault();
-
-        const input = document.querySelector('.entrada-mensaje-challenger');
-        const message = input.value.trim();
-
-        if (message) {
-            const messagesContainer = document.querySelector('.contenedor-mensajes');
-
-            const typingIndicator = document.createElement('div');
-            typingIndicator.className = 'typing-indicator';
-            typingIndicator.innerHTML = `
-                <div class="typing-dot"></div>
-                <div class="typing-dot"></div>
-                <div class="typing-dot"></div>
-            `;
-            messagesContainer.appendChild(typingIndicator);
-            messagesContainer.scrollTop = messagesContainer.scrollHeight;
-
-            setTimeout(() => {
-                typingIndicator.remove();
-
-                const newMessage = document.createElement('div');
-                newMessage.className = 'mensaje propio new-message';
-                newMessage.innerHTML = `
-                    <div class="avatar-mensaje avatar-challenger"></div>
-                    <div class="contenido-mensaje">
-                        <div class="encabezado-mensaje">
-                            <span class="usuario-mensaje">Tú</span>
-                            <span class="hora-mensaje">${new Date().getHours()}:${String(new Date().getMinutes()).padStart(2, '0')}</span>
-                        </div>
-                        <div class="texto-mensaje">
-                            ${message}
-                        </div>
-                    </div>
-                `;
-
-                messagesContainer.appendChild(newMessage);
-                input.value = '';
-                messagesContainer.scrollTop = messagesContainer.scrollHeight;
-
-                setTimeout(() => {
-                    newMessage.classList.remove('new-message');
-                }, 500);
-            }, 1000);
-        }
     });
 </script>
 </body>

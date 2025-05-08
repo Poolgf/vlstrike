@@ -1,15 +1,24 @@
 <link rel="stylesheet" href="{{ asset('css/Header/header.css') }}">
-<div class="navbar">
-    <div class="logo">
-        <a href="../"><img src="{{ asset('Img/LogoPagina.png') }}" alt="Logo Pagina"></a>
+<header class="header">
+    <div class="header-logo">
+        <a href="{{ route('home') }}"><img src="{{ asset('Img/LogoPagina.png') }}" alt="Logo Pagina"></a>
     </div>
-    <div class="menu">
-        <a href="#">INICIO</a>
-        <a href="#">CLASIFICACIÓN</a>
-        <a href="#">PARTIDOS</a>
-        <a href="#">CHAT</a>
-        <a href="#">PERFIL</a>
-        <a href="#">MÁS ▼</a>
-    </div>
-    <a href="login" class="login">INICIA SESIÓN</a>
-</div>
+    <button class="ui-btn">
+        <span>
+            VLStrike
+        </span>
+    </button>
+
+    @auth
+        <div class="user-profile">
+            <a href="{{ route('jugador', Auth::id()) }}">
+                <img src="{{ Auth::user()->icono }}"
+                     alt="Foto de perfil"
+                     class="profile-photo">
+            </a>
+            <span class="username">{{ Auth::user()->nombre }}</span>
+        </div>
+    @else
+        <a href="login" class="login-button">Iniciar Sesión</a>
+    @endauth
+</header>

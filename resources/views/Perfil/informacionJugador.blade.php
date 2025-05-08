@@ -137,7 +137,7 @@
         </div>
 
         <div style="text-align: center;">
-            <a href="home" class="btn-volver">Volver al Inicio</a>
+            <a href="{{ route('home') }}" class="btn-volver">Volver al Inicio</a>
         </div>
     </div>
 

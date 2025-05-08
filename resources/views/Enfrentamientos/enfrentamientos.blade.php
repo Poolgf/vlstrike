@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LEC Partidos</title>
-    <link rel="stylesheet" href="{{ asset('css/Clasificatoria/enfrentamientos.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/Enfrentamientos/enfrentamientos.css') }}">
 </head>
 <body>
 

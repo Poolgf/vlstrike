@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat Maestro - LoL</title>
+    <title>Chat Hierro - Valorant/LoL</title>
     <style>
         * {
             margin: 0;
@@ -12,7 +12,7 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Arial', sans-serif;
             background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
             min-height: 100vh;
             display: flex;
@@ -20,7 +20,7 @@
             align-items: center;
         }
 
-        .contenedor-maestro-chat {
+        .contenedor-hierro-chat {
             width: 100%;
             max-width: 80%;
             height: 85vh;
@@ -28,7 +28,7 @@
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6),
-            0 0 0 1px rgba(216, 191, 230, 0.1); /* Lavender Subtle Border */
+            0 0 0 1px rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(20px);
             display: flex;
             flex-direction: column;
@@ -46,18 +46,18 @@
             }
         }
 
-        .header-maestro-chat {
-            background: rgba(219, 147, 255, 0.18);
+        .header-hierro-chat {
+            background: rgba(255, 255, 255, 0.05);
             padding: 20px;
             display: flex;
             align-items: center;
             gap: 20px;
-            border-bottom: 1px solid rgba(216, 191, 230, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             position: relative;
             overflow: hidden;
         }
 
-        .header-maestro-chat::before {
+        .header-hierro-chat::before {
             content: '';
             position: absolute;
             top: 0;
@@ -67,33 +67,33 @@
             background: linear-gradient(
                 90deg,
                 transparent,
-                rgba(206, 118, 255, 0.2), /* Lavender Shine */
+                rgba(139, 139, 139, 0.1),
                 transparent
             );
-            animation: headerShineMaestro 3s infinite linear;
+            animation: headerShineHierro 4s infinite linear;
         }
 
-        @keyframes headerShineMaestro {
+        @keyframes headerShineHierro {
             from { transform: translateX(-100%); }
             to { transform: translateX(100%); }
         }
 
-        .emblema-maestro {
+        .emblema-hierro {
             width: 60px;
             height: 60px;
-            animation: maestroPulse 2s infinite ease-in-out;
+            animation: hierroPulse 3s infinite ease-in-out;
         }
 
-        @keyframes maestroPulse {
+        @keyframes hierroPulse {
             0%, 100% { transform: scale(1) rotate(0deg); }
-            50% { transform: scale(1.1) rotate(5deg); }
+            50% { transform: scale(1.05) rotate(-3deg); }
         }
 
-        .emblema-maestro img {
+        .emblema-hierro img {
             width: 100%;
             height: 100%;
             object-fit: contain;
-            filter: drop-shadow(0 0 15px rgba(216, 191, 230, 0.4)); /* Lavender Shadow */
+            filter: drop-shadow(0 0 10px rgba(139, 139, 139, 0.3));
         }
 
         h1 {
@@ -101,10 +101,10 @@
             font-size: 24px;
             text-transform: uppercase;
             letter-spacing: 2px;
-            text-shadow: 0 0 15px rgba(216, 191, 230, 0.3); /* Lavender Shadow */
+            text-shadow: 0 0 10px rgba(139, 139, 139, 0.2);
         }
 
-        .zona-chat-maestro {
+        .zona-chat-hierro {
             flex: 1;
             display: flex;
             flex-direction: column;
@@ -125,11 +125,11 @@
         }
 
         .contenedor-mensajes::-webkit-scrollbar-track {
-            background: rgba(216, 191, 230, 0.05); /* Lavender Scrollbar Track */
+            background: rgba(255, 255, 255, 0.05);
         }
 
         .contenedor-mensajes::-webkit-scrollbar-thumb {
-            background: rgba(216, 191, 230, 0.3); /* Lavender Scrollbar Thumb */
+            background: rgba(139, 139, 139, 0.2);
             border-radius: 4px;
         }
 
@@ -157,16 +157,16 @@
         }
 
         .mensaje.propio .contenido-mensaje {
-            background: rgba(216, 191, 230, 0.1); /* Lavender Background for own messages */
-            border: 1px solid rgba(216, 191, 230, 0.2); /* Lavender Border for own messages */
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .avatar-mensaje {
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #6a0dad 0%, #8e24aa 100%); /* Purple Gradient */
-            border: 2px solid rgba(216, 191, 230, 0.4); /* Lavender avatar border */
+            background: linear-gradient(135deg, #333 0%, #555 100%);
+            border: 2px solid rgba(139, 139, 139, 0.3);
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
@@ -174,7 +174,7 @@
 
         .avatar-mensaje:hover {
             transform: scale(1.1);
-            box-shadow: 0 0 20px rgba(216, 191, 230, 0.3); /* Lavender avatar shadow */
+            box-shadow: 0 0 20px rgba(139, 139, 139, 0.2);
         }
 
         .avatar-mensaje::after {
@@ -184,7 +184,7 @@
             left: 50%;
             width: 70%;
             height: 70%;
-            background: rgba(216, 191, 230, 0.1); /* Lavender inner circle */
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
             transform: translate(-50%, -50%);
         }
@@ -194,7 +194,7 @@
             padding: 15px;
             border-radius: 15px;
             max-width: 70%;
-            border: 1px solid rgba(216, 191, 230, 0.1); /* Lavender message border */
+            border: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.3s ease;
         }
 
@@ -208,7 +208,7 @@
             display: flex;
             justify-content: space-between;
             margin-bottom: 8px;
-            color: rgba(216, 191, 230, 0.6); /* Lavender text */
+            color: rgba(255, 255, 255, 0.6);
             font-size: 14px;
         }
 
@@ -229,34 +229,34 @@
             display: flex;
             gap: 15px;
             align-items: center;
-            border-top: 1px solid rgba(216, 191, 230, 0.1); /* Lavender form border */
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .entrada-mensaje-maestro {
+        .entrada-mensaje-hierro {
             flex: 1;
             padding: 15px 20px;
             background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(216, 191, 230, 0.1); /* Lavender input border */
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 10px;
             color: #fff;
             font-size: 16px;
             transition: all 0.3s ease;
         }
 
-        .entrada-mensaje-maestro:focus {
+        .entrada-mensaje-hierro:focus {
             outline: none;
             background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(216, 191, 230, 0.5); /* Lavender focus border */
-            box-shadow: 0 0 20px rgba(216, 191, 230, 0.1); /* Lavender focus shadow */
+            border-color: rgba(139, 139, 139, 0.5);
+            box-shadow: 0 0 20px rgba(139, 139, 139, 0.1);
         }
 
-        .entrada-mensaje-maestro::placeholder {
+        .entrada-mensaje-hierro::placeholder {
             color: rgba(255, 255, 255, 0.4);
         }
 
-        .boton-enviar-maestro {
+        .boton-enviar-hierro {
             padding: 15px 30px;
-            background: linear-gradient(135deg, #8e24aa 0%, #6a0dad 100%); /* Purple Gradient Button */
+            background: linear-gradient(135deg, #444 0%, #666 100%);
             border: none;
             border-radius: 10px;
             color: #fff;
@@ -269,16 +269,16 @@
             overflow: hidden;
         }
 
-        .boton-enviar-maestro:hover {
+        .boton-enviar-hierro:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(216, 191, 230, 0.3); /* Lavender button shadow */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
 
-        .boton-enviar-maestro:active {
+        .boton-enviar-hierro:active {
             transform: translateY(0);
         }
 
-        .boton-enviar-maestro::before {
+        .boton-enviar-hierro::before {
             content: '';
             position: absolute;
             top: 0;
@@ -288,13 +288,13 @@
             background: linear-gradient(
                 90deg,
                 transparent,
-                rgba(255, 255, 255, 0.3),
+                rgba(139, 139, 139, 0.2),
                 transparent
             );
             transition: 0.5s;
         }
 
-        .boton-enviar-maestro:hover::before {
+        .boton-enviar-hierro:hover::before {
             left: 100%;
         }
 
@@ -308,7 +308,7 @@
         .typing-dot {
             width: 8px;
             height: 8px;
-            background: rgba(216, 191, 230, 0.5); /* Lavender typing dot */
+            background: rgba(139, 139, 139, 0.5);
             border-radius: 50%;
             animation: typingAnimation 1s infinite;
         }
@@ -331,12 +331,12 @@
         }
 
         @keyframes newMessagePulse {
-            0% { transform: scale(1.1); background: rgba(216, 191, 230, 0.1); /* Lavender pulse background */ }
+            0% { transform: scale(1.1); background: rgba(139, 139, 139, 0.1); }
             100% { transform: scale(1); background: rgba(255, 255, 255, 0.05); }
         }
 
         @media (max-width: 768px) {
-            .contenedor-maestro-chat {
+            .contenedor-hierro-chat {
                 height: 100vh;
                 border-radius: 0;
             }
@@ -348,103 +348,56 @@
     </style>
 </head>
 <body>
-<div class="contenedor-maestro-chat">
-    <div class="header-maestro-chat">
-        <div class="emblema-maestro"><img src="{{ asset('Img/LOL/Rangos/master.png') }}" alt="Maestro" /></div>
-        <h1>CHAT MAESTRO</h1>
+<div class="contenedor-hierro-chat">
+    <div class="header-hierro-chat">
+        <div class="emblema-hierro"><img src="{{ asset('Img/LOL/Rangos/iron.png') }}" alt="VS" /></div>
+        <h1>CHAT HIERRO</h1>
     </div>
 
-    <div class="zona-chat-maestro">
+    <div class="zona-chat-hierro">
         <div class="contenedor-mensajes">
-            <div class="mensaje">
-                <div class="avatar-mensaje avatar-maestro"></div>
-                <div class="contenido-mensaje">
-                    <div class="encabezado-mensaje">
-                        <span class="usuario-mensaje">MaestroPlayer1</span>
-                        <span class="hora-mensaje">22:00</span>
+            @foreach($comentarios as $comentario)
+                <div class="mensaje {{ $comentario->usuario_id === Auth::id() ? 'propio' : '' }}">
+                    <div class="avatar-mensaje">
+                        @if($comentario->usuario)
+                            <a href="{{ route('jugador', $comentario->usuario_id) }}" class="avatar-link">
+                                @if($comentario->usuario->icono)
+                                    <img src="{{ asset($comentario->usuario->icono) }}" alt="Avatar de {{ $comentario->usuario->nombre }}" class="avatar-img">
+                                @else
+                                    <div class="avatar-fallback avatar-{{ $rango }}"></div>
+                                @endif
+                            </a>
+                        @else
+                            <div class="avatar-fallback avatar-{{ $rango }}"></div>
+                        @endif
                     </div>
-                    <div class="texto-mensaje">
-                        Buscando compañeros para duoQ en Maestro. ¡Objetivo Gran Maestro!
-                    </div>
-                </div>
-            </div>
-
-            <div class="mensaje propio">
-                <div class="avatar-mensaje avatar-maestro"></div>
-                <div class="contenido-mensaje">
-                    <div class="encabezado-mensaje">
-                        <span class="usuario-mensaje">Tú</span>
-                        <span class="hora-mensaje">22:02</span>
-                    </div>
-                    <div class="texto-mensaje">
-                        ¡Interesante! ¿Qué línea juegas?
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <form class="formulario-mensaje">
-            <input type="text" name="mensaje" placeholder="Escribe un mensaje..." required class="entrada-mensaje-maestro">
-            <button type="submit" class="boton-enviar-maestro">
-                <span>Enviar</span>
-            </button>
-        </form>
-    </div>
-</div>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const messagesContainer = document.querySelector('.contenedor-mensajes');
-        messagesContainer.scrollTop = messagesContainer.scrollHeight;
-    });
-
-    document.querySelector('.formulario-mensaje').addEventListener('submit', function (e) {
-        e.preventDefault();
-
-        const input = document.querySelector('.entrada-mensaje-maestro');
-        const message = input.value.trim();
-
-        if (message) {
-            const messagesContainer = document.querySelector('.contenedor-mensajes');
-
-            const typingIndicator = document.createElement('div');
-            typingIndicator.className = 'typing-indicator';
-            typingIndicator.innerHTML = `
-                <div class="typing-dot"></div>
-                <div class="typing-dot"></div>
-                <div class="typing-dot"></div>
-            `;
-            messagesContainer.appendChild(typingIndicator);
-            messagesContainer.scrollTop = messagesContainer.scrollHeight;
-
-            setTimeout(() => {
-                typingIndicator.remove();
-
-                const newMessage = document.createElement('div');
-                newMessage.className = 'mensaje propio new-message';
-                newMessage.innerHTML = `
-                    <div class="avatar-mensaje avatar-maestro"></div>
                     <div class="contenido-mensaje">
                         <div class="encabezado-mensaje">
-                            <span class="usuario-mensaje">Tú</span>
-                            <span class="hora-mensaje">${new Date().getHours()}:${String(new Date().getMinutes()).padStart(2, '0')}</span>
+                <span class="usuario-mensaje">
+                    {{ $comentario->usuario->nombre ?? 'Anónimo' }}
+                </span>
+                            <span class="hora-mensaje">
+                    {{ $comentario->created_at->format('H:i') }}
+                </span>
                         </div>
                         <div class="texto-mensaje">
-                            ${message}
+                            {{ $comentario->comentario }}
                         </div>
                     </div>
-                `;
+                </div>
+            @endforeach
+        </div>
 
-                messagesContainer.appendChild(newMessage);
-                input.value = '';
-                messagesContainer.scrollTop = messagesContainer.scrollHeight;
-
-                setTimeout(() => {
-                    newMessage.classList.remove('new-message');
-                }, 500);
-            }, 1000);
-        }
-    });
-</script>
+        @if(Auth::user()->rango === 'iron')
+            <form class="formulario-mensaje" action="{{ route('introducirComentario', ['rango' => 'iron']) }}" method="POST">
+                @csrf
+                <input type="text" name="comentario" placeholder="Escribe un mensaje..." required class="entrada-mensaje-hierro">
+                <button type="submit" class="boton-enviar-hierro">
+                    <span>Enviar</span>
+                </button>
+            </form>
+        @endif
+    </div>
+</div>
 </body>
 </html>

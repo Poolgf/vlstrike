@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat Esmeralda - LoL</title>
+    <title>Chat Diamante - LoL</title>
     <style>
         * {
             margin: 0;
@@ -20,7 +20,7 @@
             align-items: center;
         }
 
-        .contenedor-esmeralda-chat {
+        .contenedor-diamante-chat {
             width: 100%;
             max-width: 80%;
             height: 85vh;
@@ -28,7 +28,7 @@
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6),
-            0 0 0 1px rgba(144, 238, 144, 0.1); /* Light green border */
+            0 0 0 1px rgba(135, 206, 235, 0.1); /* Light Sky Blue Subtle Border */
             backdrop-filter: blur(20px);
             display: flex;
             flex-direction: column;
@@ -46,18 +46,18 @@
             }
         }
 
-        .header-esmeralda-chat {
-            background: rgba(144, 238, 144, 0.05); /* Light green background */
+        .header-diamante-chat {
+            background: rgba(83, 192, 234, 0.2); /* Light Sky Blue Background */
             padding: 20px;
             display: flex;
             align-items: center;
             gap: 20px;
-            border-bottom: 1px solid rgba(144, 238, 144, 0.1); /* Light green border */
+            border-bottom: 1px solid rgba(121, 209, 246, 0.2); /* Light Sky Blue Border */
             position: relative;
             overflow: hidden;
         }
 
-        .header-esmeralda-chat::before {
+        .header-diamante-chat::before {
             content: '';
             position: absolute;
             top: 0;
@@ -67,33 +67,33 @@
             background: linear-gradient(
                 90deg,
                 transparent,
-                rgba(144, 238, 144, 0.2), /* Light green shine */
+                rgba(2, 114, 168, 0.27),
                 transparent
             );
-            animation: headerShineEsmeralda 3s infinite linear;
+            animation: headerShineDiamante 3s infinite linear;
         }
 
-        @keyframes headerShineEsmeralda {
+        @keyframes headerShineDiamante {
             from { transform: translateX(-100%); }
             to { transform: translateX(100%); }
         }
 
-        .emblema-esmeralda {
+        .emblema-diamante {
             width: 60px;
             height: 60px;
-            animation: esmeraldaPulse 2s infinite ease-in-out;
+            animation: diamantePulse 2s infinite ease-in-out;
         }
 
-        @keyframes esmeraldaPulse {
+        @keyframes diamantePulse {
             0%, 100% { transform: scale(1) rotate(0deg); }
-            50% { transform: scale(1.1) rotate(10deg); }
+            50% { transform: scale(1.1) rotate(5deg); }
         }
 
-        .emblema-esmeralda img {
+        .emblema-diamante img {
             width: 100%;
             height: 100%;
             object-fit: contain;
-            filter: drop-shadow(0 0 15px rgba(144, 238, 144, 0.4)); /* Light green shadow */
+            filter: drop-shadow(0 0 15px rgba(135, 206, 235, 0.4));
         }
 
         h1 {
@@ -101,10 +101,10 @@
             font-size: 24px;
             text-transform: uppercase;
             letter-spacing: 2px;
-            text-shadow: 0 0 15px rgba(144, 238, 144, 0.3); /* Light green shadow */
+            text-shadow: 0 0 15px rgba(135, 206, 235, 0.3);
         }
 
-        .zona-chat-esmeralda {
+        .zona-chat-diamante {
             flex: 1;
             display: flex;
             flex-direction: column;
@@ -125,11 +125,11 @@
         }
 
         .contenedor-mensajes::-webkit-scrollbar-track {
-            background: rgba(144, 238, 144, 0.05); /* Light green scrollbar track */
+            background: rgba(135, 206, 235, 0.05);
         }
 
         .contenedor-mensajes::-webkit-scrollbar-thumb {
-            background: rgba(144, 238, 144, 0.3); /* Light green scrollbar thumb */
+            background: rgba(135, 206, 235, 0.3);
             border-radius: 4px;
         }
 
@@ -157,16 +157,16 @@
         }
 
         .mensaje.propio .contenido-mensaje {
-            background: rgba(144, 238, 144, 0.1); /* Light green background for own messages */
-            border: 1px solid rgba(144, 238, 144, 0.2); /* Light green border for own messages */
+            background: rgba(135, 206, 235, 0.1);
+            border: 1px solid rgba(135, 206, 235, 0.2);
         }
 
         .avatar-mensaje {
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #386641 0%, #6a994e 100%); /* Green gradient */
-            border: 2px solid rgba(144, 238, 144, 0.4); /* Light green avatar border */
+            background: linear-gradient(135deg, #1e405c 0%, #2e6184 100%);
+            border: 2px solid rgba(135, 206, 235, 0.4);
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
@@ -174,7 +174,7 @@
 
         .avatar-mensaje:hover {
             transform: scale(1.1);
-            box-shadow: 0 0 20px rgba(144, 238, 144, 0.3); /* Light green avatar shadow */
+            box-shadow: 0 0 20px rgba(135, 206, 235, 0.3);
         }
 
         .avatar-mensaje::after {
@@ -184,7 +184,7 @@
             left: 50%;
             width: 70%;
             height: 70%;
-            background: rgba(144, 238, 144, 0.1); /* Light green inner circle */
+            background: rgba(135, 206, 235, 0.1);
             border-radius: 50%;
             transform: translate(-50%, -50%);
         }
@@ -194,7 +194,7 @@
             padding: 15px;
             border-radius: 15px;
             max-width: 70%;
-            border: 1px solid rgba(144, 238, 144, 0.1); /* Light green message border */
+            border: 1px solid rgba(135, 206, 235, 0.1);
             transition: all 0.3s ease;
         }
 
@@ -208,7 +208,7 @@
             display: flex;
             justify-content: space-between;
             margin-bottom: 8px;
-            color: rgba(144, 238, 144, 0.6); /* Light green text */
+            color: rgba(135, 206, 235, 0.6);
             font-size: 14px;
         }
 
@@ -229,37 +229,37 @@
             display: flex;
             gap: 15px;
             align-items: center;
-            border-top: 1px solid rgba(144, 238, 144, 0.1); /* Light green form border */
+            border-top: 1px solid rgba(135, 206, 235, 0.1);
         }
 
-        .entrada-mensaje-esmeralda {
+        .entrada-mensaje-diamante {
             flex: 1;
             padding: 15px 20px;
             background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(144, 238, 144, 0.1); /* Light green input border */
+            border: 1px solid rgba(135, 206, 235, 0.1);
             border-radius: 10px;
             color: #fff;
             font-size: 16px;
             transition: all 0.3s ease;
         }
 
-        .entrada-mensaje-esmeralda:focus {
+        .entrada-mensaje-diamante:focus {
             outline: none;
             background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(144, 238, 144, 0.5); /* Light green focus border */
-            box-shadow: 0 0 20px rgba(144, 238, 144, 0.1); /* Light green focus shadow */
+            border-color: rgba(135, 206, 235, 0.5);
+            box-shadow: 0 0 20px rgba(135, 206, 235, 0.1);
         }
 
-        .entrada-mensaje-esmeralda::placeholder {
+        .entrada-mensaje-diamante::placeholder {
             color: rgba(255, 255, 255, 0.4);
         }
 
-        .boton-enviar-esmeralda {
+        .boton-enviar-diamante {
             padding: 15px 30px;
-            background: linear-gradient(135deg, #8fbc8f 0%, #98fb98 100%); /* Light green gradient */
+            background: linear-gradient(135deg, #2e6184 0%, #1e405c 100%);
             border: none;
             border-radius: 10px;
-            color: #1a291c; /* Dark green text */
+            color: #fff;
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -269,16 +269,16 @@
             overflow: hidden;
         }
 
-        .boton-enviar-esmeralda:hover {
+        .boton-enviar-diamante:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(144, 238, 144, 0.3); /* Light green button shadow */
+            box-shadow: 0 5px 15px rgba(135, 206, 235, 0.3);
         }
 
-        .boton-enviar-esmeralda:active {
+        .boton-enviar-diamante:active {
             transform: translateY(0);
         }
 
-        .boton-enviar-esmeralda::before {
+        .boton-enviar-diamante::before {
             content: '';
             position: absolute;
             top: 0;
@@ -294,7 +294,7 @@
             transition: 0.5s;
         }
 
-        .boton-enviar-esmeralda:hover::before {
+        .boton-enviar-diamante:hover::before {
             left: 100%;
         }
 
@@ -308,7 +308,7 @@
         .typing-dot {
             width: 8px;
             height: 8px;
-            background: rgba(144, 238, 144, 0.5); /* Light green typing dot */
+            background: rgba(135, 206, 235, 0.5);
             border-radius: 50%;
             animation: typingAnimation 1s infinite;
         }
@@ -331,12 +331,12 @@
         }
 
         @keyframes newMessagePulse {
-            0% { transform: scale(1.1); background: rgba(144, 238, 144, 0.1); /* Light green pulse background */ }
+            0% { transform: scale(1.1); background: rgba(135, 206, 235, 0.1);}
             100% { transform: scale(1); background: rgba(255, 255, 255, 0.05); }
         }
 
         @media (max-width: 768px) {
-            .contenedor-esmeralda-chat {
+            .contenedor-diamante-chat {
                 height: 100vh;
                 border-radius: 0;
             }
@@ -348,103 +348,56 @@
     </style>
 </head>
 <body>
-<div class="contenedor-esmeralda-chat">
-    <div class="header-esmeralda-chat">
-        <div class="emblema-esmeralda"><img src="{{ asset('Img/LOL/Rangos/Emerald.png') }}" alt="Esmeralda" /></div>
-        <h1>CHAT ESMERALDA</h1>
+<div class="contenedor-diamante-chat">
+    <div class="header-diamante-chat">
+        <div class="emblema-diamante"><img src="{{ asset('Img/LOL/Rangos/Diamond.png') }}" alt="Diamante" /></div>
+        <h1>CHAT DIAMANTE</h1>
     </div>
 
-    <div class="zona-chat-esmeralda">
+    <div class="zona-chat-diamante">
         <div class="contenedor-mensajes">
-            <div class="mensaje">
-                <div class="avatar-mensaje avatar-esmeralda"></div>
-                <div class="contenido-mensaje">
-                    <div class="encabezado-mensaje">
-                        <span class="usuario-mensaje">EsmeraldaPlayer1</span>
-                        <span class="hora-mensaje">20:15</span>
+            @foreach($comentarios as $comentario)
+                <div class="mensaje {{ $comentario->usuario_id === Auth::id() ? 'propio' : '' }}">
+                    <div class="avatar-mensaje">
+                        @if($comentario->usuario)
+                            <a href="{{ route('jugador', $comentario->usuario_id) }}" class="avatar-link">
+                                @if($comentario->usuario->icono)
+                                    <img src="{{ asset($comentario->usuario->icono) }}" alt="Avatar de {{ $comentario->usuario->nombre }}" class="avatar-img">
+                                @else
+                                    <div class="avatar-fallback avatar-{{ $rango }}"></div>
+                                @endif
+                            </a>
+                        @else
+                            <div class="avatar-fallback avatar-{{ $rango }}"></div>
+                        @endif
                     </div>
-                    <div class="texto-mensaje">
-                        ¡Qué tal, gente de Esmeralda! ¿Alguien para unas partidas?
-                    </div>
-                </div>
-            </div>
-
-            <div class="mensaje propio">
-                <div class="avatar-mensaje avatar-esmeralda"></div>
-                <div class="contenido-mensaje">
-                    <div class="encabezado-mensaje">
-                        <span class="usuario-mensaje">Tú</span>
-                        <span class="hora-mensaje">20:17</span>
-                    </div>
-                    <div class="texto-mensaje">
-                        ¡Aquí uno! ¿Qué rol juegas principalmente?
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <form class="formulario-mensaje">
-            <input type="text" name="mensaje" placeholder="Escribe un mensaje..." required class="entrada-mensaje-esmeralda">
-            <button type="submit" class="boton-enviar-esmeralda">
-                <span>Enviar</span>
-            </button>
-        </form>
-    </div>
-</div>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const messagesContainer = document.querySelector('.contenedor-mensajes');
-        messagesContainer.scrollTop = messagesContainer.scrollHeight;
-    });
-
-    document.querySelector('.formulario-mensaje').addEventListener('submit', function (e) {
-        e.preventDefault();
-
-        const input = document.querySelector('.entrada-mensaje-esmeralda');
-        const message = input.value.trim();
-
-        if (message) {
-            const messagesContainer = document.querySelector('.contenedor-mensajes');
-
-            const typingIndicator = document.createElement('div');
-            typingIndicator.className = 'typing-indicator';
-            typingIndicator.innerHTML = `
-                <div class="typing-dot"></div>
-                <div class="typing-dot"></div>
-                <div class="typing-dot"></div>
-            `;
-            messagesContainer.appendChild(typingIndicator);
-            messagesContainer.scrollTop = messagesContainer.scrollHeight;
-
-            setTimeout(() => {
-                typingIndicator.remove();
-
-                const newMessage = document.createElement('div');
-                newMessage.className = 'mensaje propio new-message';
-                newMessage.innerHTML = `
-                    <div class="avatar-mensaje avatar-esmeralda"></div>
                     <div class="contenido-mensaje">
                         <div class="encabezado-mensaje">
-                            <span class="usuario-mensaje">Tú</span>
-                            <span class="hora-mensaje">${new Date().getHours()}:${String(new Date().getMinutes()).padStart(2, '0')}</span>
+                <span class="usuario-mensaje">
+                    {{ $comentario->usuario->nombre ?? 'Anónimo' }}
+                </span>
+                            <span class="hora-mensaje">
+                    {{ $comentario->created_at->format('H:i') }}
+                </span>
                         </div>
                         <div class="texto-mensaje">
-                            ${message}
+                            {{ $comentario->comentario }}
                         </div>
                     </div>
-                `;
+                </div>
+            @endforeach
+        </div>
 
-                messagesContainer.appendChild(newMessage);
-                input.value = '';
-                messagesContainer.scrollTop = messagesContainer.scrollHeight;
-
-                setTimeout(() => {
-                    newMessage.classList.remove('new-message');
-                }, 500);
-            }, 1000);
-        }
-    });
-</script>
+        @if(Auth::user()->rango === 'diamond')
+            <form class="formulario-mensaje" action="{{ route('introducirComentario', ['rango' => 'diamond']) }}" method="POST">
+                @csrf
+                <input type="text" name="comentario" placeholder="Escribe un mensaje..." required class="entrada-mensaje-diamante">
+                <button type="submit" class="boton-enviar-diamante">
+                    <span>Enviar</span>
+                </button>
+            </form>
+        @endif
+    </div>
+</div>
 </body>
 </html>

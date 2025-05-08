@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat Bronce - Valorant/LoL</title>
+    <title>Chat Plata - Valorant/LoL</title>
     <style>
         * {
             margin: 0;
@@ -20,7 +20,7 @@
             align-items: center;
         }
 
-        .contenedor-bronce-chat {
+        .contenedor-plata-chat {
             width: 100%;
             max-width: 80%;
             height: 85vh;
@@ -46,7 +46,7 @@
             }
         }
 
-        .header-bronce-chat {
+        .header-plata-chat {
             background: rgba(255, 255, 255, 0.05);
             padding: 20px;
             display: flex;
@@ -57,8 +57,7 @@
             overflow: hidden;
         }
 
-        /* Para diferenciar: Animación específica de Bronce */
-        .header-bronce-chat::before {
+        .header-plata-chat::before {
             content: '';
             position: absolute;
             top: 0;
@@ -68,34 +67,34 @@
             background: linear-gradient(
                 90deg,
                 transparent,
-                rgba(205, 127, 50, 0.1),
+                rgba(192, 192, 192, 0.15),
                 transparent
             );
-            animation: headerShineBronze 4s infinite linear;
+            animation: headerShineSilver 3s infinite linear;
         }
 
-        @keyframes headerShineBronze {
+        @keyframes headerShineSilver {
             from { transform: translateX(-100%); }
             to { transform: translateX(100%); }
         }
 
-        .emblema-bronce {
+        .emblema-plata {
             width: 60px;
             height: 60px;
-            /* Para diferenciar: Animación única para Bronce */
-            animation: bronzePulse 2.5s infinite ease-in-out;
+            /* Para diferenciar: Animación única para Plata */
+            animation: silverPulse 3s infinite ease-in-out;
         }
 
-        @keyframes bronzePulse {
+        @keyframes silverPulse {
             0%, 100% { transform: scale(1) rotate(0deg); }
-            50% { transform: scale(1.05) rotate(5deg); }
+            50% { transform: scale(1.05) rotate(-3deg); }
         }
 
-        .emblema-bronce img {
+        .emblema-plata img {
             width: 100%;
             height: 100%;
             object-fit: contain;
-            filter: drop-shadow(0 0 10px rgba(205, 127, 50, 0.3));
+            filter: drop-shadow(0 0 10px rgba(192, 192, 192, 0.3));
         }
 
         h1 {
@@ -103,10 +102,10 @@
             font-size: 24px;
             text-transform: uppercase;
             letter-spacing: 2px;
-            text-shadow: 0 0 10px rgba(205, 127, 50, 0.2);
+            text-shadow: 0 0 10px rgba(192, 192, 192, 0.3);
         }
 
-        .zona-chat-bronce {
+        .zona-chat-plata {
             flex: 1;
             display: flex;
             flex-direction: column;
@@ -131,7 +130,7 @@
         }
 
         .contenedor-mensajes::-webkit-scrollbar-thumb {
-            background: rgba(205, 127, 50, 0.2); /* Color bronce sutil */
+            background: rgba(192, 192, 192, 0.3);
             border-radius: 4px;
         }
 
@@ -168,7 +167,7 @@
             height: 50px;
             border-radius: 50%;
             background: linear-gradient(135deg, #333 0%, #555 100%);
-            border: 2px solid rgba(205, 127, 50, 0.3); /* Borde bronce */
+            border: 2px solid rgba(192, 192, 192, 0.3);
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
@@ -176,7 +175,7 @@
 
         .avatar-mensaje:hover {
             transform: scale(1.1);
-            box-shadow: 0 0 20px rgba(205, 127, 50, 0.2);
+            box-shadow: 0 0 20px rgba(192, 192, 192, 0.2);
         }
 
         .avatar-mensaje::after {
@@ -234,7 +233,7 @@
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .entrada-mensaje-bronce {
+        .entrada-mensaje-plata {
             flex: 1;
             padding: 15px 20px;
             background: rgba(255, 255, 255, 0.05);
@@ -245,18 +244,18 @@
             transition: all 0.3s ease;
         }
 
-        .entrada-mensaje-bronce:focus {
+        .entrada-mensaje-plata:focus {
             outline: none;
             background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(205, 127, 50, 0.5); /* Borde bronce al focus */
-            box-shadow: 0 0 20px rgba(205, 127, 50, 0.1);
+            border-color: rgba(192, 192, 192, 0.5);
+            box-shadow: 0 0 20px rgba(192, 192, 192, 0.1);
         }
 
-        .entrada-mensaje-bronce::placeholder {
+        .entrada-mensaje-plata::placeholder {
             color: rgba(255, 255, 255, 0.4);
         }
 
-        .boton-enviar-bronce {
+        .boton-enviar-plata {
             padding: 15px 30px;
             background: linear-gradient(135deg, #444 0%, #666 100%);
             border: none;
@@ -271,17 +270,16 @@
             overflow: hidden;
         }
 
-        .boton-enviar-bronce:hover {
+        .boton-enviar-plata:hover {
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
 
-        .boton-enviar-bronce:active {
+        .boton-enviar-plata:active {
             transform: translateY(0);
         }
 
-        /* Para diferenciar: Efecto de brillo bronce */
-        .boton-enviar-bronce::before {
+        .boton-enviar-plata::before {
             content: '';
             position: absolute;
             top: 0;
@@ -291,13 +289,13 @@
             background: linear-gradient(
                 90deg,
                 transparent,
-                rgba(205, 127, 50, 0.2),
+                rgba(192, 192, 192, 0.3),
                 transparent
             );
             transition: 0.5s;
         }
 
-        .boton-enviar-bronce:hover::before {
+        .boton-enviar-plata:hover::before {
             left: 100%;
         }
 
@@ -312,7 +310,7 @@
         .typing-dot {
             width: 8px;
             height: 8px;
-            background: rgba(205, 127, 50, 0.5); /* Puntos bronce */
+            background: rgba(192, 192, 192, 0.6);
             border-radius: 50%;
             animation: typingAnimation 1s infinite;
         }
@@ -330,19 +328,18 @@
             50% { transform: translateY(-10px); opacity: 1; }
         }
 
-        /* Efecto de nuevo mensaje */
         .new-message {
             animation: newMessagePulse 0.5s ease-out;
         }
 
         @keyframes newMessagePulse {
-            0% { transform: scale(1.1); background: rgba(205, 127, 50, 0.1); }
+            0% { transform: scale(1.1); background: rgba(192, 192, 192, 0.15); }
             100% { transform: scale(1); background: rgba(255, 255, 255, 0.05); }
         }
 
         /* Responsive */
         @media (max-width: 768px) {
-            .contenedor-bronce-chat {
+            .contenedor-plata-chat {
                 height: 100vh;
                 border-radius: 0;
             }
@@ -354,106 +351,56 @@
     </style>
 </head>
 <body>
-<div class="contenedor-bronce-chat">
-    <div class="header-bronce-chat">
-        <div class="emblema-bronce"><img src="{{ asset('Img/LOL/Rangos/bronze.png') }}" alt="VS" /></div>
-        <h1>CHAT BRONCE</h1>
+<div class="contenedor-plata-chat">
+    <div class="header-plata-chat">
+        <div class="emblema-plata"><img src="{{ asset('Img/LOL/Rangos/silver.png') }}" alt="VS" /></div>
+        <h1>CHAT PLATA</h1>
     </div>
 
-    <div class="zona-chat-bronce">
+    <div class="zona-chat-plata">
         <div class="contenedor-mensajes">
-            <div class="mensaje">
-                <div class="avatar-mensaje avatar-bronce"></div>
-                <div class="contenido-mensaje">
-                    <div class="encabezado-mensaje">
-                        <span class="usuario-mensaje">BroncePlayer1</span>
-                        <span class="hora-mensaje">14:25</span>
+            @foreach($comentarios as $comentario)
+                <div class="mensaje {{ $comentario->usuario_id === Auth::id() ? 'propio' : '' }}">
+                    <div class="avatar-mensaje">
+                        @if($comentario->usuario)
+                            <a href="{{ route('jugador', $comentario->usuario_id) }}" class="avatar-link">
+                                @if($comentario->usuario->icono)
+                                    <img src="{{ asset($comentario->usuario->icono) }}" alt="Avatar de {{ $comentario->usuario->nombre }}" class="avatar-img">
+                                @else
+                                    <div class="avatar-fallback avatar-{{ $rango }}"></div>
+                                @endif
+                            </a>
+                        @else
+                            <div class="avatar-fallback avatar-{{ $rango }}"></div>
+                        @endif
                     </div>
-                    <div class="texto-mensaje">
-                        Hola, ¿alguien para hacer duos en Valorant?
-                    </div>
-                </div>
-            </div>
-
-            <div class="mensaje propio">
-                <div class="avatar-mensaje avatar-bronce"></div>
-                <div class="contenido-mensaje">
-                    <div class="encabezado-mensaje">
-                        <span class="usuario-mensaje">Tú</span>
-                        <span class="hora-mensaje">14:27</span>
-                    </div>
-                    <div class="texto-mensaje">
-                        Genial! Yo juego como Sage. ¿Cuál es tu ID?
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <form class="formulario-mensaje">
-            <input type="text" name="mensaje" placeholder="Escribe un mensaje..." required class="entrada-mensaje-bronce">
-            <button type="submit" class="boton-enviar-bronce">
-                <span>Enviar</span>
-            </button>
-        </form>
-    </div>
-</div>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const messagesContainer = document.querySelector('.contenedor-mensajes');
-        messagesContainer.scrollTop = messagesContainer.scrollHeight;
-    });
-
-    document.querySelector('.formulario-mensaje').addEventListener('submit', function (e) {
-        e.preventDefault();
-
-        const input = document.querySelector('.entrada-mensaje-bronce');
-        const message = input.value.trim();
-
-        if (message) {
-            const messagesContainer = document.querySelector('.contenedor-mensajes');
-
-            // Crear indicador de tipeo
-            const typingIndicator = document.createElement('div');
-            typingIndicator.className = 'typing-indicator';
-            typingIndicator.innerHTML = `
-                <div class="typing-dot"></div>
-                <div class="typing-dot"></div>
-                <div class="typing-dot"></div>
-            `;
-            messagesContainer.appendChild(typingIndicator);
-            messagesContainer.scrollTop = messagesContainer.scrollHeight;
-
-            // Simular envío de mensaje
-            setTimeout(() => {
-                typingIndicator.remove();
-
-                const newMessage = document.createElement('div');
-                newMessage.className = 'mensaje propio new-message';
-                newMessage.innerHTML = `
-                    <div class="avatar-mensaje avatar-bronce"></div>
                     <div class="contenido-mensaje">
                         <div class="encabezado-mensaje">
-                            <span class="usuario-mensaje">Tú</span>
-                            <span class="hora-mensaje">${new Date().getHours()}:${String(new Date().getMinutes()).padStart(2, '0')}</span>
+                <span class="usuario-mensaje">
+                    {{ $comentario->usuario->nombre ?? 'Anónimo' }}
+                </span>
+                            <span class="hora-mensaje">
+                    {{ $comentario->created_at->format('H:i') }}
+                </span>
                         </div>
                         <div class="texto-mensaje">
-                            ${message}
+                            {{ $comentario->comentario }}
                         </div>
                     </div>
-                `;
+                </div>
+            @endforeach
+        </div>
 
-                messagesContainer.appendChild(newMessage);
-                input.value = '';
-                messagesContainer.scrollTop = messagesContainer.scrollHeight;
-
-                // Remover clase de nuevo mensaje después de la animación
-                setTimeout(() => {
-                    newMessage.classList.remove('new-message');
-                }, 500);
-            }, 1000);
-        }
-    });
-</script>
+        @if(Auth::user()->rango === 'silver')
+            <form class="formulario-mensaje" action="{{ route('introducirComentario', ['rango' => 'silver']) }}" method="POST">
+                @csrf
+                <input type="text" name="comentario" placeholder="Escribe un mensaje..." required class="entrada-mensaje-plata">
+                <button type="submit" class="boton-enviar-plata">
+                    <span>Enviar</span>
+                </button>
+            </form>
+        @endif
+    </div>
+</div>
 </body>
 </html>

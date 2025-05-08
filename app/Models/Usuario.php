@@ -15,6 +15,7 @@ class Usuario extends Authenticatable
     protected $fillable = [
         'puuid',
         'rol',
+        'rango',
         'correo',
         'contrasena',
         'nombre',

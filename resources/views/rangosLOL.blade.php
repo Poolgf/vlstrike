@@ -19,7 +19,9 @@
             <div class="particle"></div>
         </div>
         <div class="highlight"></div>
-        <a href="rangosLOL/hierro"><img src="{{ asset('Img/LOL/Rangos/Iron.png') }}" alt="Iron"></a>
+            <a href="{{ route('mostrarComentarios', ['rango' => 'iron']) }}">
+                <img src="{{ asset('Img/LOL/Rangos/Iron.png') }}" alt="Iron">
+            </a>
     </div>
 
     <div class="rangosFondo">
@@ -31,7 +33,9 @@
             <div class="particle"></div>
         </div>
         <div class="highlight"></div>
-        <a href="rangosLOL/bronce"><img src="{{ asset('Img/LOL/Rangos/Bronze.png') }}" alt="Bronze"></a>
+            <a href="{{ route('mostrarComentarios', ['rango' => 'bronze']) }}">
+                <img src="{{ asset('Img/LOL/Rangos/Bronze.png') }}" alt="Bronze">
+            </a>
     </div>
 
     <div class="rangosFondo">
@@ -43,7 +47,9 @@
             <div class="particle"></div>
         </div>
         <div class="highlight"></div>
-        <a href="rangosLOL/plata"><img src="{{ asset('Img/LOL/Rangos/Silver.png') }}" alt="Silver"></a>
+            <a href="{{ route('mostrarComentarios', ['rango' => 'silver']) }}">
+                <img src="{{ asset('Img/LOL/Rangos/Silver.png') }}" alt="Silver">
+            </a>
     </div>
 
     <div class="rangosFondo">
@@ -55,7 +61,9 @@
             <div class="particle"></div>
         </div>
         <div class="highlight"></div>
-        <a href="rangosLOL/oro"><img src="{{ asset('Img/LOL/Rangos/Gold.png') }}" alt="Gold"></a>
+            <a href="{{ route('mostrarComentarios', ['rango' => 'gold']) }}">
+                <img src="{{ asset('Img/LOL/Rangos/Gold.png') }}" alt="Gold">
+            </a>
     </div>
 
     <div class="rangosFondo">
@@ -67,7 +75,9 @@
             <div class="particle"></div>
         </div>
         <div class="highlight"></div>
-        <a href="rangosLOL/platino"><img src="{{ asset('Img/LOL/Rangos/Platinum.png') }}" alt="Platinum"></a>
+            <a href="{{ route('mostrarComentarios', ['rango' => 'platinum']) }}">
+                <img src="{{ asset('Img/LOL/Rangos/Platinum.png') }}" alt="Platinum">
+            </a>
     </div>
 
     <div class="rangosFondo">
@@ -79,7 +89,9 @@
             <div class="particle"></div>
         </div>
         <div class="highlight"></div>
-        <a href="rangosLOL/esmeralda"><img src="{{ asset('Img/LOL/Rangos/Emerald.png') }}" alt="Esmeralda"></a>
+            <a href="{{ route('mostrarComentarios', ['rango' => 'emerald']) }}">
+                <img src="{{ asset('Img/LOL/Rangos/Emerald.png') }}" alt="Emerald">
+            </a>
     </div>
 
     <div class="rangosFondo">
@@ -91,7 +103,9 @@
             <div class="particle"></div>
         </div>
         <div class="highlight"></div>
-        <a href="rangosLOL/diamante"><img src="{{ asset('Img/LOL/Rangos/Diamond.png') }}" alt="Diamond"></a>
+            <a href="{{ route('mostrarComentarios', ['rango' => 'diamond']) }}">
+                <img src="{{ asset('Img/LOL/Rangos/Diamond.png') }}" alt="Diamond">
+            </a>
     </div>
 
     <div class="rangosFondo">
@@ -103,7 +117,9 @@
             <div class="particle"></div>
         </div>
         <div class="highlight"></div>
-        <a href="rangosLOL/maestro"><img src="{{ asset('Img/LOL/Rangos/Master.png') }}" alt="Master"></a>
+            <a href="{{ route('mostrarComentarios', ['rango' => 'master']) }}">
+                <img src="{{ asset('Img/LOL/Rangos/Master.png') }}" alt="Master">
+            </a>
     </div>
 
     <div class="rangosFondo">
@@ -115,7 +131,9 @@
             <div class="particle"></div>
         </div>
         <div class="highlight"></div>
-        <a href="rangosLOL/grandMaster"><img src="{{ asset('Img/LOL/Rangos/Grandmaster.png') }}" alt="Grandmaster"></a>
+            <a href="{{ route('mostrarComentarios', ['rango' => 'grandmaster']) }}">
+                <img src="{{ asset('Img/LOL/Rangos/Grandmaster.png') }}" alt="Grandmaster">
+            </a>
     </div>
 
     <div class="rangosFondo">
@@ -127,7 +145,9 @@
             <div class="particle"></div>
         </div>
         <div class="highlight"></div>
-        <a href="rangosLOL/challenger"><img src="{{ asset('Img/LOL/Rangos/Challenger.png') }}" alt="Challenger"></a>
+            <a href="{{ route('mostrarComentarios', ['rango' => 'challenger']) }}">
+                <img src="{{ asset('Img/LOL/Rangos/Challenger.png') }}" alt="Challenger">
+            </a>
     </div>
 </div>
 
