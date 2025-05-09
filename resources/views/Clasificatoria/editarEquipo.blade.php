@@ -20,19 +20,19 @@
             <div class="stats-item">
                 <div class="form-group">
                     <label for="points">PUNTOS</label>
-                    <input type="number" id="points" name="puntos" min="0" placeholder="{{$equipo->puntos}}">
+                    <input type="number" id="points" name="puntos" min="0" placeholder="{{$equipo->puntos}}" required>
                 </div>
             </div>
             <div class="stats-item">
                 <div class="form-group">
                     <label for="wins">VICTORIAS</label>
-                    <input type="number" id="wins" name="victorias" min="0" placeholder="{{$equipo->victorias}}">
+                    <input type="number" id="wins" name="victorias" min="0" placeholder="{{$equipo->victorias}}" required>
                 </div>
             </div>
             <div class="stats-item">
                 <div class="form-group">
                     <label for="losses">DERROTAS</label>
-                    <input type="number" id="losses" name="derrotas" min="0" placeholder="{{$equipo->derrotas}}">
+                    <input type="number" id="losses" name="derrotas" min="0" placeholder="{{$equipo->derrotas}}" required>
                 </div>
             </div>
         </div>

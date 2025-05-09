@@ -6,8 +6,7 @@
     <title>Programar Partido - League of Legends</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet"/>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="{{ asset('css/Clasificatoria/crearEnfrentamiento.css') }}">
-    <script src="{{ asset('js/Enfrentamiento/crearEnfrentamiento.js') }}"></script>
+    <link rel="stylesheet" href="{{ asset('css/Enfrentamientos/crearEnfrentamiento.css') }}">
 </head>
 <body>
 <div class="form-container">
@@ -94,5 +93,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/l10n/es.js"></script>
+<script src="{{ asset('js/Enfrentamiento/crearEnfrentamiento.js') }}"></script>
 </body>
 </html>

@@ -165,26 +165,44 @@
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #333 0%, #555 100%);
-            border: 2px solid rgba(139, 139, 139, 0.3);
+            background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+            border: 2px solid rgba(200, 200, 200, 0.4);
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .avatar-mensaje:hover {
             transform: scale(1.1);
-            box-shadow: 0 0 20px rgba(139, 139, 139, 0.2);
+            box-shadow: 0 0 20px rgba(200, 200, 200, 0.5);
         }
 
-        .avatar-mensaje::after {
+        .avatar-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+
+        .avatar-fallback {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+            position: relative;
+        }
+
+        .avatar-fallback::after {
             content: '';
             position: absolute;
             top: 50%;
             left: 50%;
             width: 70%;
             height: 70%;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.3);
             border-radius: 50%;
             transform: translate(-50%, -50%);
         }
