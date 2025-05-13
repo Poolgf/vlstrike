@@ -120,7 +120,6 @@ body {
     margin: 0 auto;
 }
 
-/* Feature cards */
 .features {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -128,12 +127,11 @@ body {
     padding: 20px;
 }
 
-/* Nueva tarjeta de clasificación centrada */
 .classification-container {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
     padding: 20px;
-    margin-top: 20px;
 }
 
 .feature-card {

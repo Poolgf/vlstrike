@@ -16,7 +16,19 @@ body {
     text-align: center;
 }
 
-/* Botón centrado con colores grises */
+.back-arrow i{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 2rem;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.back-arrow i:hover {
+    color: #959595;
+}
+
 .cssbuttons-io {
     margin: 20px auto;
     font-family: inherit;
@@ -87,6 +99,50 @@ a {
     background: linear-gradient(to bottom, transparent, #333, transparent);
     transform: translateX(-50%);
     z-index: -1;
+}
+
+.mensaje-vacio {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.mensaje-vacio p {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #555;
+}
+
+.delete-button {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: rgba(255, 0, 0, 0.15);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 3;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 0, 0, 0.2);
+}
+
+.delete-button i {
+    font-size: 20px;
+    color: #ff3333;
+    transition: all 0.3s ease;
+}
+
+.delete-button:hover {
+    background: rgba(255, 0, 0, 0.3);
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(255, 0, 0, 0.2);
+}
+
+.delete-button:hover i {
+    color: #ffffff;
 }
 
 .partido {

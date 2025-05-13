@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdministradorControlador;
 use App\Http\Controllers\ComentariosControlador;
 use App\Http\Controllers\EnfrentamientosControlador;
 use App\Http\Controllers\EquiposControlador;
@@ -8,10 +9,6 @@ use App\Http\Controllers\RiotControlador;
 use App\Http\Controllers\RegistroControlador;
 use Illuminate\Support\Facades\Route;
 
-
-Route::get('/home', function () {
-    return view('Index/welcome');
-})->name('home');
 
 /*--------------------------------------------Login----------------------------------------------------*/
 
@@ -29,11 +26,15 @@ Route::get('/registro', function () {
     return view('Registro/registro');
 });
 
-
-
 /*--------------------------------------------------------------------------------------------------------*/
 
 Route::middleware('auth')->group(function () {
+
+    /*-------------------------------------------Home-----------------------------------------------------*/
+
+    Route::get('/', function () {
+        return view('Index/welcome');
+    })->name('home');
 
     /*-------------------------------------------Rangos-----------------------------------------------------*/
 
@@ -43,11 +44,21 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/rangosLOL', function () {
         return view('rangosLOL');
-    });
+    })->name('rangosLOL');
+
+    /*-------------------------------------------Administrador-----------------------------------------------------*/
+
+    Route::get('/gestionAdministrador', [AdministradorControlador::class, 'usuarios'])->name('mostrarUsuarios');
+
+    Route::post('/gestionAdministrador/{id}', [AdministradorControlador::class, 'hacerAdministrador'])->name('hacerAdmin');
+
+    Route::delete('/gestionAdministrador/{id}', [AdministradorControlador::class, 'eliminarUsuario'])->name('eliminarUsuario');
 
     /*--------------------------------------------------------------------------------------------------------*/
 
     Route::get('/enfrentamientos', [EnfrentamientosControlador::class, 'mostrarPartidos'])->name('mostrarPartidos');
+
+    Route::delete('/enfrentamientos/{id}', [EnfrentamientosControlador::class, 'eliminarEnfrentamiento'])->name('eliminarEnfrentamiento');
 
     Route::get('/crearEnfrentamiento', [EquiposControlador::class, 'mostrarEquipos'])->name('mostrarEquipos');
 

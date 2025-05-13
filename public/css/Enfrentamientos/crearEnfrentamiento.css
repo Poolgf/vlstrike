@@ -44,6 +44,19 @@ body::after {
     z-index: 1;
 }
 
+.back-arrow i{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 2rem;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.back-arrow i:hover {
+    color: #959595;
+}
+
 .form-container {
     position: relative;
     z-index: 2;
@@ -386,7 +399,6 @@ select:focus, .flatpickr-input:focus {
     border-bottom-right-radius: 20px;
 }
 
-/* Estilos personalizados para Select2 */
 .select2-container--default .select2-selection--single {
     background-color: rgba(35,35,35,0.8);
     border: 2px solid transparent;

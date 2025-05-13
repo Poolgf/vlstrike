@@ -14,6 +14,19 @@ body {
     min-height: 100vh;
 }
 
+.back-arrow i{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 2rem;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.back-arrow i:hover {
+    color: #959595;
+}
+
 .container {
     max-width: 1400px;
     margin: 0 auto;

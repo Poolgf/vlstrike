@@ -8,7 +8,6 @@
 </head>
 <body>
 <div class="animated-bg">
-    <!-- Hexágonos animados generados con JavaScript -->
 </div>
 
 <x-header />
@@ -36,7 +35,7 @@
             </div>
         </div>
 
-        <!-- Nueva tarjeta de clasificación -->
+        @if(Auth::user()->rol === 'cliente' )
         <div class="classification-container">
             <div class="feature-card classification-card">
                 <div class="feature-icon">🏅</div>
@@ -45,6 +44,27 @@
                 <a href="/clasificatoria" class="feature-button">Ver Clasificación</a>
             </div>
         </div>
+        @endif
+
+        @if(Auth::user()->rol === 'admin')
+        <div class="features">
+
+            <div class="feature-card">
+                <div class="feature-icon">🏅</div>
+                <h2 class="feature-title">Clasificaciones</h2>
+                <p class="feature-description">Consulta las tablas de clasificación de todas las ligas, sigue el rendimiento de tus equipos favoritos y descubre los mejores jugadores</p>
+                <a href="/clasificatoria" class="feature-button">Ver Clasificación</a>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">👤</div>
+                <h2 class="feature-title">Gestionar Usuarios</h2>
+                <p class="feature-description">Gestiona la pagina de la mejor forma, haz administradores y elimina usuarios</p>
+                <a href="/gestionAdministrador" class="feature-button">Administrrar</a>
+            </div>
+
+        </div>
+        @endif
     </div>
 </main>
 

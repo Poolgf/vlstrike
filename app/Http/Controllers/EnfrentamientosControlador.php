@@ -45,4 +45,14 @@ class EnfrentamientosControlador extends Controller
 
         return view('Enfrentamientos/enfrentamientos', compact('partidos'));
     }
+
+    public function eliminarEnfrentamiento($id)
+    {
+        $enfrentamiento = Enfrentamiento::findOrFail($id);
+
+        $enfrentamiento->delete();
+
+        return redirect()->back()->with('success', 'Enfrentamiento eliminado correctamente.');
+    }
+
 }

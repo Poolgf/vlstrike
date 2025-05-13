@@ -6,8 +6,12 @@
     <title>Ranks - League of Legends</title>
     <link rel="stylesheet" href="{{ asset('css/Chat/todosRangos.css') }}">
     <script src="{{ asset('js/Chat/todosRangos.js') }}"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 </head>
 <body>
+<a href="{{ route('home') }}" class="back-arrow">
+    <i class="bi bi-arrow-left-circle-fill"></i>
+</a>
 <x-header/>
 <div class="container">
     <div class="rangosFondo">

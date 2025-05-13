@@ -6,8 +6,12 @@
     <title>Perfil de Invocador - League of Legends</title>
     <link rel="stylesheet" href="{{ asset('css/Perfil/perfilJugador.css') }}">
     <script src="{{ asset('js/Perfil/perfilJugador.js') }}"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 </head>
 <body>
+<a href="{{ route('home') }}" class="back-arrow">
+    <i class="bi bi-arrow-left-circle-fill"></i>
+</a>
 <div class="contenedor-perfil">
     <div class="encabezado-perfil">
         <div class="icono-perfil">

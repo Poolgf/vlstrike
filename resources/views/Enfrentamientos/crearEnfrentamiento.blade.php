@@ -7,13 +7,17 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet"/>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.css" rel="stylesheet"/>
     <link rel="stylesheet" href="{{ asset('css/Enfrentamientos/crearEnfrentamiento.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 </head>
 <body>
+
 <div class="form-container">
     <div class="hexagon-grid"></div>
     <div class="corner-accent top-left"></div>
     <div class="corner-accent bottom-right"></div>
-
+    <a href="{{ route('home') }}" class="back-arrow">
+        <i class="bi bi-arrow-left-circle-fill"></i>
+    </a>
     <div class="form-header">
         <div class="match-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">

@@ -1,0 +1,337 @@
+:root {
+    --primary-color: #fff;
+    --secondary-color: #333;
+    --accent-color: #888;
+    --hover-color: #555;
+    --shadow-color: rgba(255, 255, 255, 0.1);
+    --transition-speed: 0.3s;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #121212;
+    color: var(--primary-color);
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "sidebar main";
+}
+
+.back-arrow i{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 2rem;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.back-arrow i:hover {
+    color: #959595;
+}
+
+.main-content {
+    grid-area: main;
+    padding: 2rem;
+    overflow: auto;
+}
+
+
+.client-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.client-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1rem;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.client-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.client-card {
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: all var(--transition-speed);
+}
+
+.admin-button {
+    background-color: #8e44ad;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.admin-button:hover {
+    background-color: #9b59b6;
+}
+
+.admin-button:active {
+    opacity: 0.9;
+}
+
+.client-card {
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: all var(--transition-speed);
+}
+
+.client-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+}
+
+.client-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid #333;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.client-info {
+    display: flex;
+    align-items: center;
+}
+
+.rank-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.rank-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.client-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1rem;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.client-avatar img{
+    border-radius: 50%;
+}
+
+.client-name {
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+    color: #e0e0e0;
+}
+
+.client-email {
+    font-size: 0.85rem;
+    color: #aaa;
+}
+
+.client-footer {
+    padding: 1rem 1.5rem;
+    background-color: #252525;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.client-date {
+    font-size: 0.85rem;
+    color: #aaa;
+}
+
+.admin-button {
+    background-color: #8e44ad;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+}
+
+.admin-button:hover {
+    background-color: #9b59b6;
+}
+
+.admin-button:active {
+    opacity: 0.9;
+}
+
+.admin-button i {
+    font-size: 0.8rem;
+}
+
+/* Status badge */
+.admin-badge {
+    background-color: #2ecc71;
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 3px;
+    font-size: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.pagination-item {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    margin: 0 0.3rem;
+    cursor: pointer;
+    transition: all var(--transition-speed);
+    color: #ccc;
+}
+
+.pagination-item:hover:not(.active) {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.pagination-item.active {
+    background-color: #333;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .page-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+
+    .client-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.slide-in {
+    animation: slideIn 0.3s ease-out forwards;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.client-footer .admin-button {
+    padding: 0.5rem 1.2rem;
+    font-weight: 500;
+    border-radius: 4px;
+}
+.action-buttons {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.admin-form, .delete-form {
+    margin: 0;
+}
+
+.delete-button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    width: 55px;
+    height: 55px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.delete-button:hover {
+    background-color: #c0392b;
+}
+
+.delete-button i {
+    font-size: 0.9rem;
+}
+
+.client-footer {
+    padding: 1rem 1.5rem;
+    background-color: #252525;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

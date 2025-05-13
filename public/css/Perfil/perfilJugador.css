@@ -15,6 +15,19 @@ body {
     padding: 20px;
 }
 
+.back-arrow i{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 2rem;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.back-arrow i:hover {
+    color: #959595;
+}
+
 .contenedor-perfil {
     background: #2A2D34;
     border: 1px solid #363942;
@@ -471,7 +484,6 @@ body {
     to { transform: rotate(360deg); }
 }
 
-/* Tooltip personalizado */
 .tooltip {
     position: relative;
     display: inline-block;

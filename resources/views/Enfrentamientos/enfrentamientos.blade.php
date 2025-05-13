@@ -5,13 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LEC Partidos</title>
     <link rel="stylesheet" href="{{ asset('css/Enfrentamientos/enfrentamientos.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 </head>
 <body>
+<a href="{{ route('home') }}" class="back-arrow">
+    <i class="bi bi-arrow-left-circle-fill"></i>
+</a>
 
 @auth
-@if(auth()->user()->rol === "admin")
-    <button class="cssbuttons-io">
-        <a href="{{ route('mostrarEquipos') }}">
+    @if(auth()->user()->rol === "admin")
+        <button class="cssbuttons-io">
+            <a href="{{ route('mostrarEquipos') }}">
                 <span>
                     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path d="M0 0h24v24H0z" fill="none"></path>
@@ -20,36 +24,50 @@
                     </svg>
                     Añadir
                 </span>
-        </a>
-    </button>
-@endif
+            </a>
+        </button>
+    @endif
 @endauth
 
 <div class="horario">
-    @foreach ($partidos as $partido)
-        <div class="partido">
-            <div class="equipos">
-                <div class="equipo">
-                    <span>{{ $partido->nombre1 }}</span>
-                    <img src="{{ asset('Img/LOL/EquiposLOL/' . $partido->imagen1) }}" alt="{{ $partido->nombre1 }} Logo" />
-                </div>
-
-                <button class="fondoVersus">
-                    VS
-                </button>
-
-                <div class="equipo">
-                    <img src="{{ asset('Img/LOL/EquiposLOL/' . $partido->imagen2) }}" alt="{{ $partido->nombre2 }} Logo" />
-                    <span>{{ $partido->nombre2 }}</span>
-                </div>
-            </div>
-
-            <div class="detalles">
-                <img src="{{ asset('Img/logoLEC.png') }}" alt="LEC Logo" />
-                <span class="contadorPartido">{{ $partido->fecha}}</span>
-            </div>
+    @if ($partidos->isEmpty())
+        <div class="mensaje-vacio">
+            <p>🕹️ No hay partidos disponibles en este momento.</p>
         </div>
-    @endforeach
+    @else
+        @foreach ($partidos as $partido)
+            <div class="partido">
+                @auth
+                    @if(auth()->user()->rol === "admin")
+                        <form action="{{ route('eliminarEnfrentamiento', $partido->id) }}" method="POST" onsubmit="return confirm('¿Estás seguro de eliminar este enfrentamiento?');">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="delete-button"><i class="bi bi-trash-fill"></i></button>
+                        </form>
+                    @endif
+                @endauth
+
+                <div class="equipos">
+                    <div class="equipo">
+                        <span>{{ $partido->nombre1 }}</span>
+                        <img src="{{ asset('Img/LOL/EquiposLOL/' . $partido->imagen1) }}" alt="{{ $partido->nombre1 }} Logo" />
+                    </div>
+
+                    <button class="fondoVersus">VS</button>
+
+                    <div class="equipo">
+                        <img src="{{ asset('Img/LOL/EquiposLOL/' . $partido->imagen2) }}" alt="{{ $partido->nombre2 }} Logo" />
+                        <span>{{ $partido->nombre2 }}</span>
+                    </div>
+                </div>
+
+                <div class="detalles">
+                    <img src="{{ asset('Img/logoLEC.png') }}" alt="LEC Logo" />
+                    <span class="contadorPartido">{{ $partido->fecha }}</span>
+                </div>
+            </div>
+        @endforeach
+    @endif
 </div>
 </body>
 </html>

@@ -11,6 +11,19 @@ body {
     min-height: 100vh;
 }
 
+.back-arrow i{
+    position: absolute;
+    top:15%;
+    left: 20px;
+    font-size: 2rem;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.back-arrow i:hover {
+    color: #959595;
+}
+
 .container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

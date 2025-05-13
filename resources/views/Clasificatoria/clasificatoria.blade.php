@@ -5,8 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LOL CLASIFICATORIA-LEC 2025</title>
     <link rel="stylesheet" href="{{ asset('css/Clasificatoria/clasificatoria.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 </head>
 <body>
+<a href="{{ route('home') }}" class="back-arrow">
+    <i class="bi bi-arrow-left-circle-fill"></i>
+</a>
 <div class="background-effects">
     <div class="grid-overlay"></div>
     <div class="floating-particles"></div>
