@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iniciar Sesión - Riot Games</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ secure_asset('css/Autenticacion/login.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/Autenticacion/login.css') }}">
 </head>
 <body>
 <div class="cajaLogin">
@@ -21,5 +21,12 @@
     <h4 class="noTienesCuenta">¿No tienes cuenta?</h4>
     <a href="registro" class="crearCuenta">Crear cuenta</a>
 </div>
+
+@if(session('alert'))
+    <script>
+        alert(@json(session('alert')));
+    </script>
+@endif
+
 </body>
 </html>

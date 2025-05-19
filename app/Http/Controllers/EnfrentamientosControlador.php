@@ -16,11 +16,9 @@ class EnfrentamientosControlador extends Controller
         $equipo2Id = $request->input('equipo2');
         $fecha = $request->input('fecha');
 
-        // Obtener datos completos de los equipos
         $equipo1 = Equipo::findOrFail($equipo1Id);
         $equipo2 = Equipo::findOrFail($equipo2Id);
 
-        // Acceder a nombre e imagen
         $nombreEquipo1 = $equipo1->nombre;
         $imagenEquipo1 = $equipo1->imagen;
 
@@ -34,8 +32,8 @@ class EnfrentamientosControlador extends Controller
             'imagen2' => $imagenEquipo2,
             'fecha' => $fecha,
         ]);
-
-        return redirect()->route('mostrarPartidos')->with('success', 'Enfrentamiento creado correctamente.');
+        session()->flash('alert', 'Enfrentamiento creado con exito.');
+        return redirect()->route('mostrarPartidos');
 
     }
 
@@ -52,7 +50,8 @@ class EnfrentamientosControlador extends Controller
 
         $enfrentamiento->delete();
 
-        return redirect()->back()->with('success', 'Enfrentamiento eliminado correctamente.');
+        session()->flash('alert', 'Enfrentamiento eliminado con exito.');
+        return redirect()->back();
     }
 
 }

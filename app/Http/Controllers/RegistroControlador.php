@@ -33,7 +33,8 @@ class RegistroControlador extends Controller
         ])->get("https://europe.api.riotgames.com/riot/account/v1/accounts/by-riot-id/{$gameName}/{$tagLine}");
 
         if (!$response->successful()) {
-            return back()->withErrors(['msg' => 'No se pudo obtener el PUUID del jugador. Verifica nombre y tag.']);
+            session()->flash('alert', 'No se pudo obtener el PUUID del jugador. Verifica nombre y tag.');
+            return back();
         }
 
         $data = $response->json();
@@ -44,14 +45,14 @@ class RegistroControlador extends Controller
         ])->get("https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-puuid/{$puuid}");
 
         if (!$summonerResponse->successful()) {
-            return back()->withErrors(['msg' => 'No se pudo obtener la información del invocador.']);
+            session()->flash('alert', 'No se pudo obtener la información del invocador.');
+            return back();
         }
 
         $summonerData = $summonerResponse->json();
         $profileIconId = $summonerData['profileIconId'];
         $profileIconUrl = "http://ddragon.leagueoflegends.com/cdn/15.8.1/img/profileicon/{$profileIconId}.png";
 
-        //Aqui tengo que añadir el rango para que pueda acceder a segun que chats
         $usuario = new Usuario();
         $usuario->puuid = $puuid;
         $usuario->correo = $request->correo;
@@ -64,7 +65,8 @@ class RegistroControlador extends Controller
 
         $usuario->save();
 
-        return redirect()->route('login')->with('success', 'Usuario registrado correctamente.');
+        session()->flash('alert', 'Usuario logueado correctamente.');
+        return redirect()->route('login');
 
     }
 }

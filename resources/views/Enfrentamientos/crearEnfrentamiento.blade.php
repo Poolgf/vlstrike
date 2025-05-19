@@ -98,5 +98,11 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/l10n/es.js"></script>
 <script src="{{ asset('js/Enfrentamiento/crearEnfrentamiento.js') }}"></script>
+
+@if(session('alert'))
+    <script>
+        alert(@json(session('alert')));
+    </script>
+@endif
 </body>
 </html>

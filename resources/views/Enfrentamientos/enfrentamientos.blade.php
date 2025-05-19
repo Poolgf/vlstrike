@@ -69,5 +69,12 @@
         @endforeach
     @endif
 </div>
+
+@if(session('alert'))
+    <script>
+        alert(@json(session('alert')));
+    </script>
+@endif
+
 </body>
 </html>

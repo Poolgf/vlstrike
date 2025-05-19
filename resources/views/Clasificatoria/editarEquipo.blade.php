@@ -44,5 +44,12 @@
         <button type="submit" class="btn">Guardar Cambios</button>
     </form>
 </div>
+
+@if(session('alert'))
+    <script>
+        alert(@json(session('alert')));
+    </script>
+@endif
+
 </body>
 </html>

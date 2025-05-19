@@ -21,11 +21,13 @@ class LoginControlador extends Controller
         $usuario = Usuario::where('correo', $request->correo)->first();
 
         if (!$usuario) {
-            return back()->withErrors(['correo' => 'El usuario no existe.']);
+            session()->flash('alert', 'El usuario no existe.');
+            return back();
         }
 
         if (!Hash::check($request->contrasena, $usuario->contrasena)) {
-            return back()->withErrors(['contrasena' => 'La contraseña no es correcta.']);
+            session()->flash('alert', 'La contraseña no es correcta.');
+            return back();
         }
 
         Auth::login($usuario);
@@ -39,7 +41,8 @@ class LoginControlador extends Controller
         ])->get("https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-puuid/{$puuid}");
 
         if (!$summonerResponse->successful()) {
-            return back()->withErrors(['msg' => 'No se pudo obtener la información del invocador.']);
+            session()->flash('alert', 'No se pudo obtener la información del invocador.');
+            return back();
         }
 
         $summonerData = $summonerResponse->json();
@@ -63,6 +66,13 @@ class LoginControlador extends Controller
             }
         }
 
-        return redirect()->route('home')->with('success', 'Usuario logueado correctamente.');
+        session()->flash('alert', 'Usuario registrado correctamente.');
+        return redirect()->route('home');
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+        return redirect('/login');
     }
 }

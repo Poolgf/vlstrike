@@ -39,7 +39,8 @@ class EquiposControlador extends Controller
 
         $equipo->save();
 
-        return redirect()->route('equiposOrdenadosPorPuntos')->with('success', 'Equipo actualizado.');
+        session()->flash('alert', 'Equipo editado con exito.');
+        return redirect()->route('equiposOrdenadosPorPuntos');
     }
 
 

@@ -29,5 +29,12 @@
         <a href="login" class="crearCuenta">Iniciar Sesión</a>
     </div>
 </div>
+
+@if(session('alert'))
+    <script>
+        alert(@json(session('alert')));
+    </script>
+@endif
+
 </body>
 </html>
