@@ -32,7 +32,7 @@ Route::middleware('auth')->group(function () {
 
     /*-------------------------------------------Home-----------------------------------------------------*/
 
-    Route::get('/', function () {
+    Route::get('/index', function () {
         return view('Index/welcome');
     })->name('home');
 
