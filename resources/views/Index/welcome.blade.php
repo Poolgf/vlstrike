@@ -12,6 +12,10 @@
 
 <x-header />
 
+@php
+    dd(Auth::user());
+@endphp
+
 <main class="main-content">
     <div class="container">
         <div class="hero">
