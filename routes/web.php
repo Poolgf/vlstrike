@@ -4,6 +4,7 @@ use App\Http\Controllers\AdministradorControlador;
 use App\Http\Controllers\ComentariosControlador;
 use App\Http\Controllers\EnfrentamientosControlador;
 use App\Http\Controllers\EquiposControlador;
+use App\Http\Controllers\IndexControlador;
 use App\Http\Controllers\LoginControlador;
 use App\Http\Controllers\RiotControlador;
 use App\Http\Controllers\RegistroControlador;
@@ -30,9 +31,7 @@ Route::get('/registro', function () {
 
     /*-------------------------------------------Home-----------------------------------------------------*/
 
-    Route::get('/index', function () {
-        return view('Index/welcome');
-    })->name('home');
+    Route::get('/index', [IndexControlador::class, 'mostrarIndex'])->name('home');
 
     /*-------------------------------------------Rangos-----------------------------------------------------*/
 
