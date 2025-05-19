@@ -12,10 +12,6 @@
 
 <x-header />
 
-@php
-    dd(Auth::user());
-@endphp
-
 <main class="main-content">
     <div class="container">
         <div class="hero">
@@ -39,7 +35,7 @@
             </div>
         </div>
 
-        @if(Auth::user()->rol === 'cliente' )
+       @if(Auth::check() && Auth::user()->rol === 'cliente')
         <div class="classification-container">
             <div class="feature-card classification-card">
                 <div class="feature-icon">🏅</div>
@@ -50,7 +46,7 @@
         </div>
         @endif
 
-        @if(Auth::user()->rol === 'admin')
+       @if(Auth::check() && Auth::user()->rol === 'admin')
         <div class="features">
 
             <div class="feature-card">
