@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\URL;
+use Illuminate\Foundation\Configuration\Exceptions;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -20,9 +21,17 @@ class AppServiceProvider extends ServiceProvider
      */
     
 
+
+    public function configureExceptions(Exceptions $exceptions): void
+    {
+        $exceptions->renderUsing(null);
+    }
+
+
+
 public function boot(): void
 {
-    if (config('APP.ENV') !== 'production') {
+    if (config('APP.ENV') !== 'local') {
         URL::forceScheme('https');
     }
 }
