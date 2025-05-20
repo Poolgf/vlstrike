@@ -21,14 +21,6 @@ class AppServiceProvider extends ServiceProvider
      */
     
 
-
-    public function configureExceptions(Exceptions $exceptions): void
-    {
-        $exceptions->renderUsing(null);
-    }
-
-
-
 public function boot(): void
 {
     if (config('APP.ENV') !== 'local') {
