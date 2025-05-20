@@ -508,6 +508,7 @@ class Handler implements ExceptionHandlerContract
             ['exception' => $e]
         );
     }
+    
 
     /**
      * Get the default exception context variables for logging.
@@ -1075,4 +1076,11 @@ class Handler implements ExceptionHandlerContract
     {
         return $this->container->make(LoggerInterface::class);
     }
+
+    public function register()
+    {
+
+        Renderer::useHtml(false); 
+    }
+
 }
