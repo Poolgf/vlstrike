@@ -1076,11 +1076,5 @@ class Handler implements ExceptionHandlerContract
     {
         return $this->container->make(LoggerInterface::class);
     }
-
-    public function register()
-    {
-
-        Renderer::useHtml(false); 
-    }
-
+    
 }
