@@ -74,6 +74,18 @@ Route::get('/registro', function () {
 
     /*--------------------------------------------------------------------------------------------------------*/
 
+    // Ruta temporal para ver el log de Laravel (¡eliminar después de depurar!)
+    Route::get('/log', function () {
+        try {
+            $logPath = storage_path('logs/laravel.log');
+            if (!file_exists($logPath)) {
+                return 'No existe el archivo de log.';
+            }
+            return '<pre>' . e(file_get_contents($logPath)) . '</pre>';
+        } catch (Exception $e) {
+            return 'Error leyendo el log: ' . $e->getMessage();
+        }
+    });
 /*--------------------------------------------------------------------------------------------------------*/
 
 
