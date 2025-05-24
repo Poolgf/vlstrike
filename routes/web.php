@@ -10,31 +10,23 @@ use App\Http\Controllers\RegistroControlador;
 use Illuminate\Support\Facades\Route;
 
 
-/*--------------------------------------------Login----------------------------------------------------*/
 
-Route::get('/login', function () {
-    return view('Login/login');
-})->name('login');
+    Route::get('/login', function () {
+        return view('Login/login');
+    })->name('login');
 
-Route::post('/login', [LoginControlador::class, 'login'])->name('loguearUsuario');
+    Route::post('/login', [LoginControlador::class, 'login'])->name('loguearUsuario');
 
-/*--------------------------------------------Registro----------------------------------------------------*/
 
-Route::post('/registro', [RegistroControlador::class, 'comprobarUsuario'])->name('comprobarUsuario');
+    Route::post('/registro', [RegistroControlador::class, 'comprobarUsuario'])->name('comprobarUsuario');
 
-Route::get('/registro', function () {
-    return view('Registro/registro');
-});
-
-/*--------------------------------------------------------------------------------------------------------*/
-
-    /*-------------------------------------------Home-----------------------------------------------------*/
+    Route::get('/registro', function () {
+        return view('Registro/registro');
+    });
 
     Route::get('/index', function () {
         return view('Index/welcome');
     })->name('home');
-
-    /*-------------------------------------------Rangos-----------------------------------------------------*/
 
     Route::get('/rangosLOL/{rango}', [ComentariosControlador::class, 'mostrarComentarios'])->name('mostrarComentarios');
 
@@ -44,36 +36,34 @@ Route::get('/registro', function () {
         return view('rangosLOL');
     })->name('rangosLOL');
 
-    /*-------------------------------------------Administrador-----------------------------------------------------*/
-
-    Route::get('/gestionAdministrador', [AdministradorControlador::class, 'usuarios'])->name('mostrarUsuarios');
-
-    Route::post('/gestionAdministrador/{id}', [AdministradorControlador::class, 'hacerAdministrador'])->name('hacerAdmin');
-
-    Route::delete('/gestionAdministrador/{id}', [AdministradorControlador::class, 'eliminarUsuario'])->name('eliminarUsuario');
-
-    /*--------------------------------------------------------------------------------------------------------*/
-
     Route::get('/enfrentamientos', [EnfrentamientosControlador::class, 'mostrarPartidos'])->name('mostrarPartidos');
-
-    Route::delete('/enfrentamientos/{id}', [EnfrentamientosControlador::class, 'eliminarEnfrentamiento'])->name('eliminarEnfrentamiento');
-
-    Route::get('/crearEnfrentamiento', [EquiposControlador::class, 'mostrarEquipos'])->name('mostrarEquipos');
-
-    Route::post('/crearEnfrentamiento', [EnfrentamientosControlador::class, 'IntroducirEnfrentamiento'])->name('anadirPartido');
 
     Route::get('/clasificatoria', [EquiposControlador::class, 'mostrarEquiposOrdenadosPorPuntos'])->name('equiposOrdenadosPorPuntos');
 
-    Route::get('/clasificatoria/{id}', [EquiposControlador::class, 'editarEquipo'])->name('editarEquipo');
 
-    Route::put('/clasificatoria/{id}', [EquiposControlador::class, 'actualizarEquipo'])->name('actualizarEquipo');
+    Route::middleware('auth')->group(function () {
 
-    /*--------------------------------------------Riot-API----------------------------------------------------*/
+        Route::get('/gestionAdministrador', [AdministradorControlador::class, 'usuarios'])->name('mostrarUsuarios');
 
-    Route::get('/home/perfilUsuario/{id}', [RiotControlador::class, 'conseguirJugador'])->name('jugador');
+        Route::post('/gestionAdministrador/{id}', [AdministradorControlador::class, 'hacerAdministrador'])->name('hacerAdmin');
+
+        Route::delete('/gestionAdministrador/{id}', [AdministradorControlador::class, 'eliminarUsuario'])->name('eliminarUsuario');
+
+        Route::get('/home/perfilUsuario/{id}', [RiotControlador::class, 'conseguirJugador'])->name('jugador');
+
+        Route::post('/crearEnfrentamiento', [EnfrentamientosControlador::class, 'IntroducirEnfrentamiento'])->name('anadirPartido');
+
+        Route::delete('/enfrentamientos/{id}', [EnfrentamientosControlador::class, 'eliminarEnfrentamiento'])->name('eliminarEnfrentamiento');
+
+        Route::get('/crearEnfrentamiento', [EquiposControlador::class, 'mostrarEquipos'])->name('mostrarEquipos');
+
+        Route::get('/clasificatoria/{id}', [EquiposControlador::class, 'editarEquipo'])->name('editarEquipo');
+
+        Route::put('/clasificatoria/{id}', [EquiposControlador::class, 'actualizarEquipo'])->name('actualizarEquipo');
+
+    });
 
     /*--------------------------------------------------------------------------------------------------------*/
-
     // Ruta temporal para ver el log de Laravel (¡eliminar después de depurar!)
     Route::get('/log', function () {
         try {
