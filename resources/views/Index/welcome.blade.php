@@ -59,7 +59,7 @@
             </div>
         </div>
 
-        @if(!Auth::user() !! Auth::check() && Auth::user()->rol === 'cliente' )
+        @if(!Auth::user() || Auth::user()->rol === 'cliente')
         <div class="classification-container">
             <div class="feature-card classification-card">
                 <div class="feature-icon">🏅</div>
