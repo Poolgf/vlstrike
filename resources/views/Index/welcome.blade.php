@@ -59,6 +59,7 @@
             </div>
         </div>
 
+        @if(!Auth::user() !! Auth::check() && Auth::user()->rol === 'cliente' )
         <div class="classification-container">
             <div class="feature-card classification-card">
                 <div class="feature-icon">🏅</div>
@@ -67,6 +68,7 @@
                 <a href="/clasificatoria" class="feature-button">Ver Clasificación</a>
             </div>
         </div>
+        @endif
 
        @if(Auth::check() && Auth::user()->rol === 'admin')
         <div class="features">
