@@ -41,7 +41,13 @@
                 <div class="team-record">{{$equipo->victorias}} - {{$equipo->derrotas}}</div>
                 <div class="win-rate-bar">
                     <div class="win-rate-fill" style="width: 80%"></div>
-                    <div class="win-rate-text">  {{ round(($equipo->victorias / ($equipo->victorias + $equipo->derrotas)) * 100, 2) }}%WR</div>
+                    <div class="win-rate-text">
+                    @if(($equipo->victorias + $equipo->derrotas) > 0)
+                        {{ round(($equipo->victorias / ($equipo->victorias + $equipo->derrotas)) * 100, 2) }}% WR
+                    @else
+                        N/A
+                    @endif
+                    </div>
                 </div>
             </div>
                 @auth

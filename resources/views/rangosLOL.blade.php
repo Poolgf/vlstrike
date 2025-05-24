@@ -36,6 +36,7 @@
     @else
         <a href="login" class="login-button">Iniciar Sesión</a>
     @endauth
+    
 </header>
 
 <div class="container">

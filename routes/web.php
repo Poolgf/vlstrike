@@ -28,14 +28,6 @@ use Illuminate\Support\Facades\Route;
         return view('Index/welcome');
     })->name('home');
 
-    Route::get('/rangosLOL/{rango}', [ComentariosControlador::class, 'mostrarComentarios'])->name('mostrarComentarios');
-
-    Route::post('/rangosLOL/{rango}', [ComentariosControlador::class, 'introducirComentario'])->name('introducirComentario');
-
-    Route::get('/rangosLOL', function () {
-        return view('rangosLOL');
-    })->name('rangosLOL');
-
     Route::get('/enfrentamientos', [EnfrentamientosControlador::class, 'mostrarPartidos'])->name('mostrarPartidos');
 
     Route::get('/clasificatoria', [EquiposControlador::class, 'mostrarEquiposOrdenadosPorPuntos'])->name('equiposOrdenadosPorPuntos');
@@ -43,6 +35,15 @@ use Illuminate\Support\Facades\Route;
 
     Route::middleware('auth')->group(function () {
 
+
+        Route::get('/rangosLOL/{rango}', [ComentariosControlador::class, 'mostrarComentarios'])->name('mostrarComentarios');
+
+        Route::post('/rangosLOL/{rango}', [ComentariosControlador::class, 'introducirComentario'])->name('introducirComentario');
+
+        Route::get('/rangosLOL', function () {
+            return view('rangosLOL');
+        })->name('rangosLOL');
+        
         Route::get('/gestionAdministrador', [AdministradorControlador::class, 'usuarios'])->name('mostrarUsuarios');
 
         Route::post('/gestionAdministrador/{id}', [AdministradorControlador::class, 'hacerAdministrador'])->name('hacerAdmin');
