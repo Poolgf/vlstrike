@@ -59,7 +59,6 @@
             </div>
         </div>
 
-       @if(Auth::check() && Auth::user()->rol === 'cliente')
         <div class="classification-container">
             <div class="feature-card classification-card">
                 <div class="feature-icon">🏅</div>
@@ -68,7 +67,6 @@
                 <a href="/clasificatoria" class="feature-button">Ver Clasificación</a>
             </div>
         </div>
-        @endif
 
        @if(Auth::check() && Auth::user()->rol === 'admin')
         <div class="features">
@@ -93,7 +91,7 @@
 </main>
 
 <footer class="footer">
-    <p>&copy; 2024 VLStrike. Todos los derechos reservados.</p>
+    <p>&copy; 2025 VLStrike. Todos los derechos reservados.</p>
 </footer>
 </body>
 <script src="{{ asset('js/Index/index.js') }}"></script>

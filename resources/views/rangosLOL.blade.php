@@ -181,7 +181,7 @@
 </div>
 
 <div class="footer">
-    &copy; 2024 Riot Games - League of Legends. Todos los derechos reservados.
+    &copy;  2025 VLStrike. Todos los derechos reservados.
 </div>
 
 </body>
