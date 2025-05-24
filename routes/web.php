@@ -24,7 +24,7 @@ use Illuminate\Support\Facades\Route;
         return view('Registro/registro');
     });
 
-    Route::get('/index', function () {
+    Route::get('/', function () {
         return view('Index/welcome');
     })->name('home');
 
