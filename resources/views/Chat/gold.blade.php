@@ -61,7 +61,11 @@
                 <span>Enviar</span>
             </button>
         </form>
-    @endif
+    @else
+            <div class="mensaje-sin-permiso">
+                <p>Solo los jugadores de rango Bronce pueden enviar mensajes en este chat.</p>
+            </div>
+        @endif
 </div>
 </body>
 </html>

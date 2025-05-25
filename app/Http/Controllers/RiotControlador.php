@@ -79,7 +79,7 @@ class RiotControlador extends Controller
                     $championName = 'Desconocido';
                     $championIcon = 'https://via.placeholder.com/80?text=?';
 
-                    // Buscamos el nombre del campeón utilizando su `key`
+                    // Busco el nombre del campeón utilizando su `key`
                     foreach ($championsData['data'] as $key => $champion) {
                         if ($champion['key'] === $championId) {
                             $championName = $champion['name'];
@@ -105,6 +105,13 @@ class RiotControlador extends Controller
             $winRate = $totalGames > 0 ? round(($totalWins / $totalGames) * 100) : 0;
             $kda = round((rand(30, 100) / 10), 2);
             $mainRole = ['Top', 'Jungle', 'Mid', 'ADC', 'Support'][rand(0, 4)];
+
+            if(!$soloRankEmblem) {
+                $soloRankEmblem = 'Img/LOL/Rangos/sinRango.png'; 
+            }
+            if(!$flexRankEmblem) {
+                $flexRankEmblem = 'Img/LOL/Rangos/sinRango.png';
+            }
 
             return view('Perfil/informacionJugador', [
                 'gameName' => $usuario->nombre,
