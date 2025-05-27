@@ -31,11 +31,7 @@
                         </div>
                     </div>
                     <div class="rank-avatar">
-                        @if($usuario->rango != "noRango")             
-                            <img src="{{ 'Img/LOL/Rangos/'.$usuario->rango.'.png' }}" alt="Rango {{ $usuario->rango }}" />
-                        @else
-                            <i class="fas fa-user-alt"></i>
-                        @endif
+                        <i class="fas fa-user-alt"></i>
                     </div>
                 </div>
                 <div class="client-footer">
