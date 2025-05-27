@@ -40,7 +40,8 @@ class RiotControlador extends Controller
             $soloWins = $soloLosses = $flexWins = $flexLosses = 0;
 
             //Aqui tengo que poner el emblema default de no tener rango
-            $soloRankEmblem = $flexRankEmblem = '';
+           $soloRankEmblem = 'Img/LOL/Rangos/sinRango.png';
+           $flexRankEmblem = 'Img/LOL/Rangos/sinRango.png';
 
             if ($rankResponse->successful()) {
                 foreach ($rankResponse->json() as $entry) {
