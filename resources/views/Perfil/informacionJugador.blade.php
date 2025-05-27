@@ -54,7 +54,7 @@
                     @if($soloRankEmblem === "Img/LOL/Rangos/.png")
                         <img src="{{ asset('Img/LOL/Rangos/sinRango.png') }}" alt="{{ $soloRankEmblem }}">
                     @else
-                        <img src="{{ asset($soloRankEmblem) }}" alt="{{ $soloRankEmblem }}">
+                        <img src="{{ asset('Img/LOL/Rangos/{{usuario->rango}}.png) }}" alt="{{ $soloRankEmblem }}">
                     @endif
                 </div>
                 <div class="rango-info">
