@@ -29,7 +29,7 @@ class RiotControlador extends Controller
             $summonerId = $summonerData['id'];
             $summonerLevel = $summonerData['summonerLevel'];
             $profileIconId = $summonerData['profileIconId'];
-            $profileIconUrl = "https://ddragon.leagueoflegends.com/cdn/15.8.1/img/profileicon/{$profileIconId}.png";
+            $profileIconUrl = "http://ddragon.leagueoflegends.com/cdn/15.8.1/img/profileicon/{$profileIconId}.png";
 
 
             $rankResponse = Http::withHeaders([
