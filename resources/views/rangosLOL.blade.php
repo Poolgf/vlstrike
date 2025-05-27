@@ -50,7 +50,7 @@
         </div>
         <div class="highlight"></div>
             <a href="{{ route('mostrarComentarios', ['rango' => 'iron']) }}">
-                <img src="{{ asset('Img/LOL/Rangos/iron.png') }}" alt="Iron">
+                <img src="{{ asset('Img/LOL/Rangos/Iron.png') }}" alt="Iron">
             </a>
     </div>
 
