@@ -49,11 +49,13 @@
         <div class="seccion-perfil seccion-rango">
             <h2 class="titulo-seccion">Ligas Clasificatorias</h2>
 
-            {{dd($soloRankEmblem, $flexRankEmblem)}}
-
             <div class="rango-container">
                 <div class="rango-emblem">
-                    <img src="{{ asset($soloRankEmblem ?? 'Img/LOL/Rangos/sinRango.png') }}" alt="Emblema de rango solo">
+                    @if($soloRankEmblem === "Img/LOL/Rangos/.png")
+                        <img src="{{ asset('Img/LOL/Rangos/sinRango.png') }}" alt="Emblema de rango solo">
+                    @else
+                        <img src="{{ asset($soloRankEmblem) }}" alt="Emblema de rango solo">
+                    @endif
                 </div>
                 <div class="rango-info">
                     <div class="dato-jugador">
@@ -79,7 +81,11 @@
 
             <div class="rango-container">
                 <div class="rango-emblem">
-                    <img src="{{ asset($flexRankEmblem ?? 'Img/LOL/Rangos/sinRango.png') }}" alt="Emblema de rango flex">
+                    @if($flexRankEmblem === "Img/LOL/Rangos/.png")
+                        <img src="{{ asset('Img/LOL/Rangos/sinRango.png') }}" alt="Emblema de rango solo">
+                    @else
+                        <img src="{{ asset($flexRankEmblem) }}" alt="Emblema de rango flex">
+                    @endif
                 </div>
                 <div class="rango-info">
                     <div class="dato-jugador">

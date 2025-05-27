@@ -12,7 +12,7 @@
 <a href="{{ route('home') }}" class="back-arrow">
     <i class="bi bi-arrow-left-circle-fill"></i>
 </a>
-
+{{dd($usuarios)}}
 <main class="main-content">
     <div class="client-grid" id="clientGrid">
         @foreach($usuarios as $usuario)
