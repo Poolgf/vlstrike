@@ -50,14 +50,14 @@ class RiotControlador extends Controller
                         $soloLP = $entry['leaguePoints'];
                         $soloWins = $entry['wins'];
                         $soloLosses = $entry['losses'];
-                        $soloRankEmblem = "Img/LOL/Rangos/{$soloRank}.png";
+                        $soloRankEmblem = "Img/LOL/Rangos/" . strtolower($soloRank) . ".png";
                     } elseif ($entry['queueType'] === 'RANKED_FLEX_SR') {
                         $flexRank = $entry['tier'];
                         $flexTier = $entry['rank'];
                         $flexLP = $entry['leaguePoints'];
                         $flexWins = $entry['wins'];
                         $flexLosses = $entry['losses'];
-                        $flexRankEmblem = "Img/LOL/Rangos/{$flexRank}.png";
+                        $flexRankEmblem = "Img/LOL/Rangos/" . strtolower($flexRank) . ".png";
                     }
                 }
             }
