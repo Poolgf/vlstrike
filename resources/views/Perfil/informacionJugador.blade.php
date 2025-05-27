@@ -51,11 +51,7 @@
 
             <div class="rango-container">
                 <div class="rango-emblem">
-                    @if($soloRankEmblem === "Img/LOL/Rangos/.png")
-                        <img src="{{ asset('Img/LOL/Rangos/sinRango.png') }}" alt="{{ $soloRankEmblem }}">
-                    @else
-                        <img src="{{ asset('Img/LOL/Rangos/{{usuario->rango}}.png) }}" alt="{{ $soloRankEmblem }}">
-                    @endif
+                    <img src="{{ asset('Img/LOL/Rangos/sinRango.png') }}" alt="{{ $soloRankEmblem }}">
                 </div>
                 <div class="rango-info">
                     <div class="dato-jugador">
@@ -81,11 +77,7 @@
 
             <div class="rango-container">
                 <div class="rango-emblem">
-                    @if($flexRankEmblem === "Img/LOL/Rangos/.png")
-                        <img src="{{ asset('Img/LOL/Rangos/sinRango.png') }}" alt="Emblema de rango solo">
-                    @else
-                        <img src="{{ asset($flexRankEmblem) }}" alt="Emblema de rango flex">
-                    @endif
+                    <img src="{{ asset('Img/LOL/Rangos/sinRango.png') }}" alt="Emblema de rango solo">
                 </div>
                 <div class="rango-info">
                     <div class="dato-jugador">
