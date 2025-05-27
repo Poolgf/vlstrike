@@ -51,7 +51,7 @@
 
             <div class="rango-container">
                 <div class="rango-emblem">
-                    <img src="{{ asset($soloRankEmblem) }}" alt="Emblema de rango solo">
+                    <img src="{{ asset($soloRankEmblem ?? 'Img/LOL/Rangos/sinRango.png') }}" alt="Emblema de rango solo">
                 </div>
                 <div class="rango-info">
                     <div class="dato-jugador">
@@ -77,7 +77,7 @@
 
             <div class="rango-container">
                 <div class="rango-emblem">
-                    <img src="{{ asset($flexRankEmblem) }}" alt="Emblema de rango flex">
+                    <img src="{{ asset($flexRankEmblem ?? 'Img/LOL/Rangos/sinRango.png') }}" alt="Emblema de rango flex">
                 </div>
                 <div class="rango-info">
                     <div class="dato-jugador">
@@ -102,7 +102,6 @@
             </div>
         </div>
 
-        <!-- Maestrías de campeones -->
         <div class="seccion-perfil seccion-maestria">
             <h2 class="titulo-seccion">Maestría de Campeones</h2>
             <div class="maestria-container">

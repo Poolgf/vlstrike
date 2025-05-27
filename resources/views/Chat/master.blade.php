@@ -14,7 +14,7 @@
 </a>
 <div class="contenedor-maestro-chat">
     <div class="header-maestro-chat">
-        <div class="emblema-maestro"><img src="{{ asset('Img/LOL/Rangos/Master.png') }}" alt="Maestro" /></div>
+        <div class="emblema-maestro"><img src="{{ asset('Img/LOL/Rangos/master.png') }}" alt="Maestro" /></div>
         <h1>CHAT MAESTRO</h1>
     </div>
 

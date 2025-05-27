@@ -106,13 +106,6 @@ class RiotControlador extends Controller
             $kda = round((rand(30, 100) / 10), 2);
             $mainRole = ['Top', 'Jungle', 'Mid', 'ADC', 'Support'][rand(0, 4)];
 
-            if(!$soloRankEmblem) {
-                $soloRankEmblem = 'Img/LOL/Rangos/sinRango.png'; 
-            }
-            if(!$flexRankEmblem) {
-                $flexRankEmblem = 'Img/LOL/Rangos/sinRango.png';
-            }
-
             return view('Perfil/informacionJugador', [
                 'gameName' => $usuario->nombre,
                 'tagLine' => $usuario->tag,

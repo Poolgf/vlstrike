@@ -14,7 +14,7 @@
 </a>
 <div class="contenedor-oro-chat">
     <div class="header-oro-chat">
-        <div class="emblema-oro"><img src="{{ asset('Img/LOL/Rangos/Gold.png') }}" alt="oro" /></div>
+        <div class="emblema-oro"><img src="{{ asset('Img/LOL/Rangos/gold.png') }}" alt="oro" /></div>
         <h1>CHAT ORO</h1>
     </div>
 

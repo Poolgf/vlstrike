@@ -14,7 +14,7 @@
 </a>
 <div class="contenedor-platino-chat">
     <div class="header-platino-chat">
-        <div class="emblema-platino"><img src="{{ asset('Img/LOL/Rangos/Platinum.png') }}" alt="VS" /></div>
+        <div class="emblema-platino"><img src="{{ asset('Img/LOL/Rangos/platinum.png') }}" alt="VS" /></div>
         <h1>CHAT PLATINO</h1>
     </div>
 

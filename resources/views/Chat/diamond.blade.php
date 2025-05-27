@@ -14,7 +14,7 @@
 </a>
 <div class="contenedor-diamante-chat">
     <div class="header-diamante-chat">
-        <div class="emblema-diamante"><img src="{{ asset('Img/LOL/Rangos/Diamond.png') }}" alt="Diamante" /></div>
+        <div class="emblema-diamante"><img src="{{ asset('Img/LOL/Rangos/diamond.png') }}" alt="Diamante" /></div>
         <h1>CHAT DIAMANTE</h1>
     </div>
 

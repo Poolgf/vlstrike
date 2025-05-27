@@ -14,7 +14,7 @@
 </a>
 <div class="contenedor-grandmaster-chat">
     <div class="header-grandmaster-chat">
-        <div class="emblema-grandmaster"><img src="{{ asset('Img/LOL/Rangos/Grandmaster.png') }}" alt="Grandmaster" /></div>
+        <div class="emblema-grandmaster"><img src="{{ asset('Img/LOL/Rangos/grandmaster.png') }}" alt="Grandmaster" /></div>
         <h1>CHAT GRANDMASTER</h1>
     </div>
 
