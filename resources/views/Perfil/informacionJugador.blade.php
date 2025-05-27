@@ -52,9 +52,9 @@
             <div class="rango-container">
                 <div class="rango-emblem">
                     @if($soloRankEmblem === "Img/LOL/Rangos/.png")
-                        <img src="{{ asset('Img/LOL/Rangos/sinRango.png') }}" alt="Emblema de rango solo">
+                        <img src="{{ asset('Img/LOL/Rangos/sinRango.png') }}" alt="$soloRankEmblem">
                     @else
-                        <img src="{{ asset($soloRankEmblem) }}" alt="Emblema de rango solo">
+                        <img src="{{ asset($soloRankEmblem) }}" alt="$soloRankEmblem">
                     @endif
                 </div>
                 <div class="rango-info">
