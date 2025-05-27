@@ -31,9 +31,8 @@
                         </div>
                     </div>
                     <div class="rank-avatar">
-                        @if($usuario->rango != "noRango")    
-                        dd(asset('Img/LOL/Rangos/'.$usuario->rango.'.png'))    
-                            <img src="{{ asset('Img/LOL/Rangos/'.$usuario->rango.'.png') }}" alt="Rango {{ $usuario->rango }}" />
+                        @if($usuario->rango != "noRango")             
+                            <img src="{{ 'Img/LOL/Rangos/'.$usuario->rango.'.png' }}" alt="Rango {{ $usuario->rango }}" />
                         @else
                             <i class="fas fa-user-alt"></i>
                         @endif
