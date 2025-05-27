@@ -49,6 +49,8 @@
         <div class="seccion-perfil seccion-rango">
             <h2 class="titulo-seccion">Ligas Clasificatorias</h2>
 
+            {{dd($soloRankEmblem, $flexRankEmblem)}}
+
             <div class="rango-container">
                 <div class="rango-emblem">
                     <img src="{{ asset($soloRankEmblem ?? 'Img/LOL/Rangos/sinRango.png') }}" alt="Emblema de rango solo">
