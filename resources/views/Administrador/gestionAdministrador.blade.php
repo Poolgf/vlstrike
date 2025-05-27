@@ -31,7 +31,11 @@
                         </div>
                     </div>
                     <div class="rank-avatar">
+                        @if($usuario->icono)
+                        <img src="{{ asset($usuario->rango) }}" alt="Avatar de {{ $usuario->rango }}" />
+                         @else
                         <i class="fas fa-user-alt"></i>
+                        @endif
                     </div>
                 </div>
                 <div class="client-footer">
