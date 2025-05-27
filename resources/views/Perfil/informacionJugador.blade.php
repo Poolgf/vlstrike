@@ -51,6 +51,7 @@
 
             <div class="rango-container">
                 <div class="rango-emblem">
+                    <img src="{{ asset('Img/LOL/Rangos/Gold.png') }}" alt="{{ $soloRankEmblem }}">
                     <img src="{{ asset('Img/LOL/Rangos/sinRango.png') }}" alt="{{ $soloRankEmblem }}">
                 </div>
                 <div class="rango-info">

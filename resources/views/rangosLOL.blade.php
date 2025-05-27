@@ -64,7 +64,7 @@
         </div>
         <div class="highlight"></div>
             <a href="{{ route('mostrarComentarios', ['rango' => 'bronze']) }}">
-                <img src="{{ asset('Img/LOL/Rangos/bronze.png') }}" alt="Bronze">
+                <img src="{{ asset('Img/LOL/Rangos/Bronze.png') }}" alt="Bronze">
             </a>
     </div>
 
@@ -78,7 +78,7 @@
         </div>
         <div class="highlight"></div>
             <a href="{{ route('mostrarComentarios', ['rango' => 'silver']) }}">
-                <img src="{{ asset('Img/LOL/Rangos/silver.png') }}" alt="Silver">
+                <img src="{{ asset('Img/LOL/Rangos/Silver.png') }}" alt="Silver">
             </a>
     </div>
 
@@ -92,7 +92,7 @@
         </div>
         <div class="highlight"></div>
             <a href="{{ route('mostrarComentarios', ['rango' => 'gold']) }}">
-                <img src="{{ asset('Img/LOL/Rangos/gold.png') }}" alt="Gold">
+                <img src="{{ asset('Img/LOL/Rangos/Gold.png') }}" alt="Gold">
             </a>
     </div>
 
@@ -106,7 +106,7 @@
         </div>
         <div class="highlight"></div>
             <a href="{{ route('mostrarComentarios', ['rango' => 'platinum']) }}">
-                <img src="{{ asset('Img/LOL/Rangos/platinum.png') }}" alt="Platinum">
+                <img src="{{ asset('Img/LOL/Rangos/Platinum.png') }}" alt="Platinum">
             </a>
     </div>
 
@@ -120,7 +120,7 @@
         </div>
         <div class="highlight"></div>
             <a href="{{ route('mostrarComentarios', ['rango' => 'emerald']) }}">
-                <img src="{{ asset('Img/LOL/Rangos/emerald.png') }}" alt="Emerald">
+                <img src="{{ asset('Img/LOL/Rangos/Emerald.png') }}" alt="Emerald">
             </a>
     </div>
 
@@ -134,7 +134,7 @@
         </div>
         <div class="highlight"></div>
             <a href="{{ route('mostrarComentarios', ['rango' => 'diamond']) }}">
-                <img src="{{ asset('Img/LOL/Rangos/diamond.png') }}" alt="Diamond">
+                <img src="{{ asset('Img/LOL/Rangos/Diamond.png') }}" alt="Diamond">
             </a>
     </div>
 
@@ -148,7 +148,7 @@
         </div>
         <div class="highlight"></div>
             <a href="{{ route('mostrarComentarios', ['rango' => 'master']) }}">
-                <img src="{{ asset('Img/LOL/Rangos/master.png') }}" alt="Master">
+                <img src="{{ asset('Img/LOL/Rangos/Master.png') }}" alt="Master">
             </a>
     </div>
 
@@ -162,7 +162,7 @@
         </div>
         <div class="highlight"></div>
             <a href="{{ route('mostrarComentarios', ['rango' => 'grandmaster']) }}">
-                <img src="{{ asset('Img/LOL/Rangos/grandmaster.png') }}" alt="Grandmaster">
+                <img src="{{ asset('Img/LOL/Rangos/Grandmaster.png') }}" alt="Grandmaster">
             </a>
     </div>
 
@@ -176,7 +176,7 @@
         </div>
         <div class="highlight"></div>
             <a href="{{ route('mostrarComentarios', ['rango' => 'challenger']) }}">
-                <img src="{{ asset('Img/LOL/Rangos/challenger.png') }}" alt="Challenger">
+                <img src="{{ asset('Img/LOL/Rangos/Challenger.png') }}" alt="Challenger">
             </a>
     </div>
 </div>
