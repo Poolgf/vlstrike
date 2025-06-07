@@ -14,7 +14,7 @@
 </a>
 <div class="contenedor-esmeralda-chat">
     <div class="header-esmeralda-chat">
-        <div class="emblema-esmeralda"><img src="{{ asset('Img/LOL/Rangos/Emerald.png') }}" alt="Esmeralda" /></div>
+        <div class="emblema-esmeralda"><img src="{{ asset('Img/LOL/Rangos/emerald.png') }}" alt="Esmeralda" /></div>
         <h1>CHAT ESMERALDA</h1>
     </div>
 
@@ -62,7 +62,7 @@
             </form>
         @else
             <div class="mensaje-sin-permiso">
-                <p>Solo los jugadores de rango Esmeralda pueden enviar mensajes en este chat.</p>
+                <p>Solo los jugadores de rango Bronce pueden enviar mensajes en este chat.</p>
             </div>
         @endif
     </div>

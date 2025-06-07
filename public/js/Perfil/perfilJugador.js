@@ -13,12 +13,12 @@ seccion.style.transform = 'translateX(0)';
 
 // Animación de las barras de progreso
 const barras = document.querySelectorAll('.progreso-rango-barra');
-    barras.forEach(barra => {
-        const width = barra.style.width;
-        barra.style.width = '0%';
-        setTimeout(() => {
-        barra.style.width = width;
-        }, 1000);
+barras.forEach(barra => {
+    const width = barra.style.width;
+barra.style.width = '0%';
+setTimeout(() => {
+barra.style.width = width;
+}, 1000);
 });
 
 // Contador animado para estadísticas
@@ -43,7 +43,7 @@ clearInterval(intervalo);
 });
 });
 
-// Efecto en el encabezado
+// Efecto parallax en el encabezado
    document.addEventListener('mousemove', function(e) {
     const encabezado = document.querySelector('.encabezado-perfil');
     const x = e.clientX / window.innerWidth;

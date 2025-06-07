@@ -1,4 +1,4 @@
-// Aqui tengo el efecto de resaltado en los rangos
+// Efecto de resaltado siguiendo el cursor
 document.querySelectorAll('.rangosFondo').forEach(elemento => {
     elemento.addEventListener('mousemove', (e) => {
         const highlight = elemento.querySelector('.highlight');

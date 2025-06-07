@@ -5,7 +5,10 @@ for (let i = 0; i < 30; i++) {
     const hexagon = document.createElement('div');
     hexagon.className = 'hexagon';
 
+    // Posición aleatoria
     hexagon.style.left = `${Math.random() * 100}%`;
+
+    // Tamaño aleatorio
     const size = Math.random() * 100 + 50;
     hexagon.style.width = `${size}px`;
     hexagon.style.height = `${size}px`;
@@ -19,7 +22,7 @@ for (let i = 0; i < 30; i++) {
     bg.appendChild(hexagon);
 }
 
-// Efecto sutil en el hero
+// Efecto parallax sutil en el hero
 const hero = document.querySelector('.hero');
 
 document.addEventListener('mousemove', (e) => {

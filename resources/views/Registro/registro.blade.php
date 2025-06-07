@@ -17,22 +17,11 @@
         <form method="POST" action="{{ route('comprobarUsuario') }}">
             @csrf
             <input type="text" name="nombre" placeholder="Nombre de usuario del LOL" required />
-
             <input type="text" name="tag" placeholder="#LOL" required />
-
-            <input type="text" name="correo" placeholder="Gmail" value="{{ old('correo') }}" required />
-            @error('correo')
-            <div style="color: red; font-size: 0.9em;">{{ $message }}</div>
-            @enderror
-
+            <input type="text" name="correo" placeholder="Gmail" required />
             <input type="password" name="contrasena" placeholder="Contraseña" required />
-            @error('contrasena')
-            <div style="color: red; font-size: 0.9em;">{{ $message }}</div>
-            @enderror
-
             <input type="password" name="contrasena_confirmation" placeholder="Confirmar Contraseña" required />
             <br /><br />
-
             <button type="submit" class="enviar">Enviar</button>
         </form>
         <br />

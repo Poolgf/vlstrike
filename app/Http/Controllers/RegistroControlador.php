@@ -17,9 +17,6 @@ class RegistroControlador extends Controller
             'contrasena' => 'required|string|min:6|confirmed',
             'nombre' => 'required|string',
             'tag' => 'required|string',
-        ], [
-            'correo.unique' => 'El correo electrónico ya está registrado.',
-            'contrasena.min' => 'La contraseña debe tener al menos 6 caracteres.'
         ]);
 
         $apiKey = config('services.riot.key');
@@ -42,11 +39,6 @@ class RegistroControlador extends Controller
 
         $data = $response->json();
         $puuid = $data['puuid'];
-
-        if (Usuario::where('puuid', $puuid)->exists()) {
-            session()->flash('alert', 'Ya existe un usuario registrado con su cuenta del LOL.');
-            return back()->withInput();
-        }
 
         $summonerResponse = Http::withHeaders([
             'X-Riot-Token' => $apiKey

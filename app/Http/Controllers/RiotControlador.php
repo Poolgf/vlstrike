@@ -29,7 +29,7 @@ class RiotControlador extends Controller
             $summonerId = $summonerData['id'];
             $summonerLevel = $summonerData['summonerLevel'];
             $profileIconId = $summonerData['profileIconId'];
-            $profileIconUrl = "http://ddragon.leagueoflegends.com/cdn/15.8.1/img/profileicon/{$profileIconId}.png";
+            $profileIconUrl = "https://ddragon.leagueoflegends.com/cdn/15.8.1/img/profileicon/{$profileIconId}.png";
 
 
             $rankResponse = Http::withHeaders([
@@ -39,8 +39,9 @@ class RiotControlador extends Controller
             $soloRank = $flexRank = $soloTier = $flexTier = $soloLP = $flexLP = 0;
             $soloWins = $soloLosses = $flexWins = $flexLosses = 0;
 
-            $soloRankEmblem = 'Img/LOL/Rangos/sinRango.png';
-            $flexRankEmblem = 'Img/LOL/Rangos/sinRango.png';
+            //Aqui tengo que poner el emblema default de no tener rango
+           $soloRankEmblem = 'Img/LOL/Rangos/sinRango.png';
+           $flexRankEmblem = 'Img/LOL/Rangos/sinRango.png';
 
             if ($rankResponse->successful()) {
                 foreach ($rankResponse->json() as $entry) {
@@ -50,14 +51,15 @@ class RiotControlador extends Controller
                         $soloLP = $entry['leaguePoints'];
                         $soloWins = $entry['wins'];
                         $soloLosses = $entry['losses'];
-                        $soloRankEmblem = "Img/LOL/Rangos/{$soloRank}.png";
+                        $soloRankEmblem =  "Img/LOL/Rangos/" . ucfirst(strtolower($soloRank)) . ".png";
+
                     } elseif ($entry['queueType'] === 'RANKED_FLEX_SR') {
                         $flexRank = $entry['tier'];
                         $flexTier = $entry['rank'];
                         $flexLP = $entry['leaguePoints'];
                         $flexWins = $entry['wins'];
                         $flexLosses = $entry['losses'];
-                        $flexRankEmblem = "Img/LOL/Rangos/{$flexRank}.png";
+                        $flexRankEmblem = "Img/LOL/Rangos/" . ucfirst(strtolower($flexRank)) . ".png";
                     }
                 }
             }

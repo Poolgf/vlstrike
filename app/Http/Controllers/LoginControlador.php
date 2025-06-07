@@ -58,7 +58,7 @@ class LoginControlador extends Controller
             foreach ($rankResponse->json() as $entry) {
                 if ($entry['queueType'] === 'RANKED_SOLO_5x5') {
                     $soloRank = $entry['tier'];
-                    $usuario->rango = strtolower($soloRank);
+                    $usuario->rango = ucfirst(strtolower($soloRank));
                     $usuario->icono = $profileIconUrl;
                     $usuario->save();
                     break;

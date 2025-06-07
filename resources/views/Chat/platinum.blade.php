@@ -62,7 +62,7 @@
             </form>
         @else
             <div class="mensaje-sin-permiso">
-                <p>Solo los jugadores de rango Platino pueden enviar mensajes en este chat.</p>
+                <p>Solo los jugadores de rango Bronce pueden enviar mensajes en este chat.</p>
             </div>
         @endif
     </div>

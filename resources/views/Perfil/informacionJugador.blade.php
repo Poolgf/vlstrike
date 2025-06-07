@@ -120,7 +120,6 @@
             </div>
         </div>
 
-        <!-- Maestrías de campeones -->
         <div class="seccion-perfil seccion-maestria">
             <h2 class="titulo-seccion">Maestría de Campeones</h2>
             <div class="maestria-container">
