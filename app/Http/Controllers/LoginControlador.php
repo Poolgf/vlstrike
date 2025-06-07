@@ -75,4 +75,5 @@ class LoginControlador extends Controller
         Auth::logout();
         return redirect('/login');
     }
+
 }

@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 
     Route::post('/login', [LoginControlador::class, 'login'])->name('loguearUsuario');
 
+    Route::post('/home/perfilUsuario/logout', [LoginControlador::class, 'logout'])->name('logout');
 
     Route::post('/registro', [RegistroControlador::class, 'comprobarUsuario'])->name('comprobarUsuario');
 
