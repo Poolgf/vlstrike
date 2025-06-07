@@ -14,7 +14,7 @@
 </a>
 <div class="contenedor-grandmaster-chat">
     <div class="header-grandmaster-chat">
-        <div class="emblema-grandmaster"><img src="{{ asset('Img/LOL/Rangos/grandmaster.png') }}" alt="Grandmaster" /></div>
+        <div class="emblema-grandmaster"><img src="{{ asset('Img/LOL/Rangos/Grandmaster.png') }}" alt="Grandmaster" /></div>
         <h1>CHAT GRANDMASTER</h1>
     </div>
 
@@ -62,7 +62,7 @@
             </form>
         @else
             <div class="mensaje-sin-permiso">
-                <p>Solo los jugadores de rango Bronce pueden enviar mensajes en este chat.</p>
+                <p>Solo los jugadores de rango GrandMaster pueden enviar mensajes en este chat.</p>
             </div>
         @endif
     </div>

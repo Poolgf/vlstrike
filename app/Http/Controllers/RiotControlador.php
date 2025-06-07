@@ -29,7 +29,7 @@ class RiotControlador extends Controller
             $summonerId = $summonerData['id'];
             $summonerLevel = $summonerData['summonerLevel'];
             $profileIconId = $summonerData['profileIconId'];
-            $profileIconUrl = "https://ddragon.leagueoflegends.com/cdn/15.8.1/img/profileicon/{$profileIconId}.png";
+            $profileIconUrl = "http://ddragon.leagueoflegends.com/cdn/15.8.1/img/profileicon/{$profileIconId}.png";
 
 
             $rankResponse = Http::withHeaders([
@@ -39,9 +39,8 @@ class RiotControlador extends Controller
             $soloRank = $flexRank = $soloTier = $flexTier = $soloLP = $flexLP = 0;
             $soloWins = $soloLosses = $flexWins = $flexLosses = 0;
 
-            //Aqui tengo que poner el emblema default de no tener rango
-           $soloRankEmblem = 'Img/LOL/Rangos/sinRango.png';
-           $flexRankEmblem = 'Img/LOL/Rangos/sinRango.png';
+            $soloRankEmblem = 'Img/LOL/Rangos/sinRango.png';
+            $flexRankEmblem = 'Img/LOL/Rangos/sinRango.png';
 
             if ($rankResponse->successful()) {
                 foreach ($rankResponse->json() as $entry) {
@@ -51,14 +50,14 @@ class RiotControlador extends Controller
                         $soloLP = $entry['leaguePoints'];
                         $soloWins = $entry['wins'];
                         $soloLosses = $entry['losses'];
-                        $soloRankEmblem = "Img/LOL/Rangos/" . strtolower($soloRank) . ".png";
+                        $soloRankEmblem = "Img/LOL/Rangos/{$soloRank}.png";
                     } elseif ($entry['queueType'] === 'RANKED_FLEX_SR') {
                         $flexRank = $entry['tier'];
                         $flexTier = $entry['rank'];
                         $flexLP = $entry['leaguePoints'];
                         $flexWins = $entry['wins'];
                         $flexLosses = $entry['losses'];
-                        $flexRankEmblem = "Img/LOL/Rangos/" . strtolower($flexRank) . ".png";
+                        $flexRankEmblem = "Img/LOL/Rangos/{$flexRank}.png";
                     }
                 }
             }

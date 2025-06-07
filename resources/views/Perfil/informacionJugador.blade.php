@@ -13,6 +13,16 @@
     <i class="bi bi-arrow-left-circle-fill"></i>
 </a>
 <div class="contenedor-perfil">
+    <div style="text-align: center;">
+        <form method="POST" action="{{ route('logout') }}">
+            @csrf
+            <button type="submit" class="btn-logout">
+                <i class="bi bi-box-arrow-right"></i>
+                Cerrar Sesión
+            </button>
+        </form>
+    </div>
+
     <div class="encabezado-perfil">
         <div class="icono-perfil">
             <img src="{{ $profileIconUrl }}" alt="Icono de invocador">
@@ -51,7 +61,11 @@
 
             <div class="rango-container">
                 <div class="rango-emblem">
-                    <img src="{{ asset('Img/LOL/Rangos/sinRango.png') }}" alt="{{ $soloRankEmblem }}">
+                    @if(Auth::user()->rango === "sinRango")
+                        <img src="{{ asset('Img/LOL/Rangos/sinRango.png') }}" alt="Emblema de rango solo">
+                    @else
+                        <img src="{{ asset($soloRankEmblem) }}" alt="Emblema de rango solo">
+                    @endif
                 </div>
                 <div class="rango-info">
                     <div class="dato-jugador">
@@ -77,7 +91,11 @@
 
             <div class="rango-container">
                 <div class="rango-emblem">
-                    <img src="{{ asset('Img/LOL/Rangos/sinRango.png') }}" alt="Emblema de rango solo">
+                    @if(Auth::user() ->rango === "sinRango")
+                        <img src="{{ asset('Img/LOL/Rangos/sinRango.png') }}" alt="Emblema de rango solo">
+                    @else
+                        <img src="{{ asset($flexRankEmblem) }}" alt="Emblema de rango flex">
+                    @endif
                 </div>
                 <div class="rango-info">
                     <div class="dato-jugador">
@@ -102,6 +120,7 @@
             </div>
         </div>
 
+        <!-- Maestrías de campeones -->
         <div class="seccion-perfil seccion-maestria">
             <h2 class="titulo-seccion">Maestría de Campeones</h2>
             <div class="maestria-container">

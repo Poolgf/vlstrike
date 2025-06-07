@@ -14,7 +14,7 @@
 </a>
 <div class="contenedor-diamante-chat">
     <div class="header-diamante-chat">
-        <div class="emblema-diamante"><img src="{{ asset('Img/LOL/Rangos/diamond.png') }}" alt="Diamante" /></div>
+        <div class="emblema-diamante"><img src="{{ asset('Img/LOL/Rangos/Diamond.png') }}" alt="Diamante" /></div>
         <h1>CHAT DIAMANTE</h1>
     </div>
 
@@ -62,7 +62,7 @@
             </form>
         @else
             <div class="mensaje-sin-permiso">
-                <p>Solo los jugadores de rango Bronce pueden enviar mensajes en este chat.</p>
+                <p>Solo los jugadores de rango Diamante pueden enviar mensajes en este chat.</p>
             </div>
         @endif
     </div>

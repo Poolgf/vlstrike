@@ -226,7 +226,13 @@ class SqlServerGrammar extends Grammar
         );
     }
 
-    /** @inheritDoc */
+    /**
+     * Compile a rename column command.
+     *
+     * @param  \Illuminate\Database\Schema\Blueprint  $blueprint
+     * @param  \Illuminate\Support\Fluent  $command
+     * @return array|string
+     */
     public function compileRenameColumn(Blueprint $blueprint, Fluent $command)
     {
         return sprintf("sp_rename %s, %s, N'COLUMN'",
@@ -235,7 +241,13 @@ class SqlServerGrammar extends Grammar
         );
     }
 
-    /** @inheritDoc */
+    /**
+     * Compile a change column command into a series of SQL statements.
+     *
+     * @param  \Illuminate\Database\Schema\Blueprint  $blueprint
+     * @param  \Illuminate\Support\Fluent  $command
+     * @return array|string
+     */
     public function compileChange(Blueprint $blueprint, Fluent $command)
     {
         return [
@@ -769,10 +781,6 @@ class SqlServerGrammar extends Grammar
      */
     protected function typeDate(Fluent $column)
     {
-        if ($column->useCurrent) {
-            $column->default(new Expression('CAST(GETDATE() AS DATE)'));
-        }
-
         return 'date';
     }
 
@@ -860,10 +868,6 @@ class SqlServerGrammar extends Grammar
      */
     protected function typeYear(Fluent $column)
     {
-        if ($column->useCurrent) {
-            $column->default(new Expression('CAST(YEAR(GETDATE()) AS INTEGER)'));
-        }
-
         return $this->typeInteger($column);
     }
 
@@ -1029,7 +1033,7 @@ class SqlServerGrammar extends Grammar
     /**
      * Quote the given string literal.
      *
-     * @param  string|array<string>  $value
+     * @param  string|array  $value
      * @return string
      */
     public function quoteString($value)

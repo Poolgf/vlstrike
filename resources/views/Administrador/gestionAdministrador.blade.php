@@ -12,64 +12,71 @@
 <a href="{{ route('home') }}" class="back-arrow">
     <i class="bi bi-arrow-left-circle-fill"></i>
 </a>
+
 <main class="main-content">
+    @if($usuarios->isEmpty())
+        <div class="mensaje-vacio">
+            <p>👤No hay usuarios clientes en este momento</p>
+        </div>
+    @else
     <div class="client-grid" id="clientGrid">
-        @foreach($usuarios as $usuario)
-            <div class="client-card slide-in">
-                <div class="client-header">
-                    <div class="client-info">
-                        <div class="client-avatar">
-                            @if($usuario->icono)
-                                <img src="{{ asset($usuario->icono) }}" alt="Avatar de {{ $usuario->nombre }}" />
+            @foreach($usuarios as $usuario)
+                <div class="client-card slide-in">
+                    <div class="client-header">
+                        <div class="client-info">
+                            <div class="client-avatar">
+                                @if($usuario->icono)
+                                    <img src="{{ asset($usuario->icono) }}" alt="Avatar de {{ $usuario->nombre }}" />
+                                @else
+                                    <i class="fas fa-user-alt"></i>
+                                @endif
+                            </div>
+                            <div>
+                                <div class="client-name">{{ $usuario->nombre ?? 'Sin nombre' }}</div>
+                                <div class="client-email">{{ $usuario->correo ?? 'Sin email' }}</div>
+                            </div>
+                        </div>
+                        <div class="rank-avatar">
+                            @if($usuario->rango != "noRango")
+                                <img src="{{ asset('Img/LOL/Rangos/' .$usuario->rango.'.png') }}" alt="Rango {{ $usuario->rango }}" />
                             @else
                                 <i class="fas fa-user-alt"></i>
                             @endif
                         </div>
-                        <div>
-                            <div class="client-name">{{ $usuario->nombre ?? 'Sin nombre' }}</div>
-                            <div class="client-email">{{ $usuario->correo ?? 'Sin email' }}</div>
-                        </div>
                     </div>
-                    <div class="rank-avatar">
-                        @if($usuario->icono)
-                        <img src="{{ asset($usuario->rango) }}" alt="Avatar de {{ $usuario->rango }}" />
-                         @else
-                        <i class="fas fa-user-alt"></i>
-                        @endif
-                    </div>
-                </div>
-                <div class="client-footer">
-                    <div class="client-date">Desde: {{ $usuario->created_at->format('d/m/Y') }}</div>
-                    <div class="action-buttons">
-                        @if($usuario->admin)
-                            <div class="admin-badge">
-                                <i class="fas fa-check-circle"></i> Administrador
-                            </div>
-                        @else
+                    <div class="client-footer">
+                        <div class="client-date">Desde: {{ $usuario->created_at->format('d/m/Y') }}</div>
+                        <div class="action-buttons">
+                            @if($usuario->admin)
+                                <div class="admin-badge">
+                                    <i class="fas fa-check-circle"></i> Administrador
+                                </div>
+                            @else
+                                @if(Auth::user()->rol === "admin")
+                                    <form action="{{ route('hacerAdmin', $usuario->id) }}" method="POST" class="admin-form">
+                                        @csrf
+                                        <button type="submit" class="admin-button make-admin-btn">
+                                            <i class="fas fa-user"></i> Hacer Admin
+                                        </button>
+                                    </form>
+                                @endif
+                            @endif
+
                             @if(Auth::user()->rol === "admin")
-                                <form action="{{ route('hacerAdmin', $usuario->id) }}" method="POST" class="admin-form">
+                                <form action="{{ route('eliminarUsuario', $usuario->id) }}" method="POST" class="delete-form">
                                     @csrf
-                                    <button type="submit" class="admin-button make-admin-btn">
-                                        <i class="fas fa-user"></i> Hacer Admin
+                                    @method('DELETE')
+                                    <button type="submit" class="delete-button" title="Eliminar usuario">
+                                        <i class="fas fa-trash-alt"></i>
                                     </button>
                                 </form>
                             @endif
-                        @endif
-
-                        @if(Auth::user()->rol === "admin")
-                            <form action="{{ route('eliminarUsuario', $usuario->id) }}" method="POST" class="delete-form">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="delete-button" title="Eliminar usuario">
-                                    <i class="fas fa-trash-alt"></i>
-                                </button>
-                            </form>
-                        @endif
+                        </div>
                     </div>
                 </div>
-            </div>
-        @endforeach
-    </div>
+            @endforeach
+        @endif
+        </div>
 
     @if ($usuarios->isNotEmpty())
     <div class="pagination">

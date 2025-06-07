@@ -13,25 +13,25 @@ class EquiposSeeder extends Seeder
         Equipo::create([
             'nombre' => 'Fnatic',
             'imagen' => 'Fnatic.png',
-            'puntos' => 0,
-            'victorias' => 0,
-            'derrotas' => 0
+            'puntos' => 20,
+            'victorias' => 10,
+            'derrotas' => 1
         ]);
 
         Equipo::create([
             'nombre' => 'G2',
             'imagen' => 'G2.png',
-            'puntos' => 0,
-             'victorias' => 0,
-            'derrotas' => 0
+            'puntos' => 15,
+            'victorias' => 8,
+            'derrotas' => 3
         ]);
 
         Equipo::create([
             'nombre' => 'Gx',
             'imagen' => 'Giantx.png',
-            'puntos' => 0,
-             'victorias' => 0,
-            'derrotas' => 0
+            'puntos' => 13,
+             'victorias' => 7,
+            'derrotas' => 4
         ]);
 
         Equipo::create([
