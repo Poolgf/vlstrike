@@ -52,7 +52,7 @@
             @endforeach
         </div>
 
-        @if(Auth::user()->rango === 'silver')
+        @if(Auth::user()->rango === 'Silver')
             <form class="formulario-mensaje" action="{{ route('introducirComentario', ['rango' => 'silver']) }}" method="POST">
                 @csrf
                 <input type="text" name="comentario" placeholder="Escribe un mensaje..." required class="entrada-mensaje-plata">

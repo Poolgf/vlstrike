@@ -53,7 +53,7 @@
         </div>
     </div>
 
-    @if(Auth::user()->rango === 'gold')
+    @if(Auth::user()->rango === 'Gold')
         <form class="formulario-mensaje" action="{{ route('introducirComentario', ['rango' => 'gold']) }}" method="POST">
             @csrf
             <input type="text" name="comentario" placeholder="Escribe un mensaje..." required class="entrada-mensaje-oro">

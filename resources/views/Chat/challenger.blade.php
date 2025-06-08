@@ -52,7 +52,7 @@
             @endforeach
         </div>
 
-        @if(Auth::user()->rango === 'challenger')
+        @if(Auth::user()->rango === 'Challenger')
         <form class="formulario-mensaje" action="{{ route('introducirComentario', ['rango' => 'challenger']) }}" method="POST">
             @csrf
             <input type="text" name="comentario" placeholder="Escribe un mensaje..." required class="entrada-mensaje-challenger">
