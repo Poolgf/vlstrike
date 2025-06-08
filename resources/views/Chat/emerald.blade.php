@@ -14,7 +14,7 @@
 </a>
 <div class="contenedor-esmeralda-chat">
     <div class="header-esmeralda-chat">
-        <div class="emblema-esmeralda"><img src="{{ asset('Img/LOL/Rangos/emerald.png') }}" alt="Esmeralda" /></div>
+        <div class="emblema-esmeralda"><img src="{{ asset('Img/LOL/Rangos/Emerald.png') }}" alt="Esmeralda" /></div>
         <h1>CHAT ESMERALDA</h1>
     </div>
 

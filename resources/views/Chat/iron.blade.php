@@ -14,7 +14,7 @@
 </a>
 <div class="contenedor-hierro-chat">
     <div class="header-hierro-chat">
-        <div class="emblema-hierro"><img src="{{ asset('Img/LOL/Rangos/iron.png') }}" alt="VS" /></div>
+        <div class="emblema-hierro"><img src="{{ asset('Img/LOL/Rangos/Iron.png') }}" alt="VS" /></div>
         <h1>CHAT HIERRO</h1>
     </div>
 

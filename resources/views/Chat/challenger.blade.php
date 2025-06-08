@@ -14,7 +14,7 @@
 </a>
 <div class="contenedor-challenger-chat">
     <div class="header-challenger-chat">
-        <div class="emblema-challenger"><img src="{{ asset('Img/LOL/Rangos/challenger.png') }}" alt="Challenger" /></div>
+        <div class="emblema-challenger"><img src="{{ asset('Img/LOL/Rangos/Challenger.png') }}" alt="Challenger" /></div>
         <h1>CHAT CHALLENGER</h1>
     </div>
 

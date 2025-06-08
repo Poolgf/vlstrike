@@ -14,7 +14,7 @@
 </a>
 <div class="contenedor-bronce-chat">
     <div class="header-bronce-chat">
-        <div class="emblema-bronce"><img src="{{ asset('Img/LOL/Rangos/bronze.png') }}" alt="VS" /></div>
+        <div class="emblema-bronce"><img src="{{ asset('Img/LOL/Rangos/Bronze.png') }}" alt="VS" /></div>
         <h1>CHAT BRONCE</h1>
     </div>
 
