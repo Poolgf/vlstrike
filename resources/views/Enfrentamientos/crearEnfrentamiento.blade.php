@@ -15,7 +15,7 @@
     <div class="hexagon-grid"></div>
     <div class="corner-accent top-left"></div>
     <div class="corner-accent bottom-right"></div>
-    <a href="{{ route('home') }}" class="back-arrow">
+    <a href="{{ route('mostrarPartidos') }}" class="back-arrow">
         <i class="bi bi-arrow-left-circle-fill"></i>
     </a>
     <div class="form-header">

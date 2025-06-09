@@ -9,7 +9,7 @@
 <body>
 
 <div class="container">
-    <a href="{{ route('home') }}" class="back-arrow">
+    <a href="{{ route('equiposOrdenadosPorPuntos') }}" class="back-arrow">
         <i class="bi bi-arrow-left-circle-fill"></i>
     </a>
     <div class="team-info">
